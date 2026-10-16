@@ -1,0 +1,10 @@
+[
+  { "nom": "trone-vitrail", "seeds": [101, 102, 103],
+    "prompt": "Wide cinematic fantasy illustration, bright colorful anime style with clean ink outlines. Interior of a grand dark lord's throne room: a huge round stained glass rose window divided into colorful panels of abstract flames, stars and waves glowing in red, blue, green and gold; an empty ornate stone throne with red velvet on a raised dais in front of it; purple stone pillars, violet and indigo shadows, warm light beams through the glass. Empty room, no people, no text, no logo." },
+  { "nom": "trone-gardiens", "seeds": [111, 112, 113],
+    "prompt": "Wide cinematic fantasy illustration, colorful anime style with clean ink outlines. A gothic throne hall with a giant circular stained glass window glowing behind an empty throne; on both sides huge carved stone statues of original cute but fearsome fantasy monsters: a horned purple ogre, a winged gargoyle, a round slime-like blob creature, a small dragon. Violet, magenta and teal palette, sparkling magic dust, dark floor in the foreground. No people, no text, no logo." },
+  { "nom": "balcon-chateau", "seeds": [121, 122],
+    "prompt": "Wide cinematic fantasy illustration, vivid anime style with clean outlines. View from a dark castle balcony through a tall arch framed by a colorful stained glass border: a purple night sky with a crimson moon, floating islands, a sprawling demonic fortress city with glowing windows, swirling magenta clouds, small silhouettes of flying monsters. Dark foreground stone floor. No people, no text, no logo." },
+  { "nom": "rosace-seule", "seeds": [131, 132],
+    "prompt": "Wide decorative fantasy background, colorful anime illustration with ink outlines: a giant glowing circular stained glass rose window on the right side of a dark violet gothic wall, panels showing abstract dragons, flames and stars in red, blue, green and gold, light rays and sparkles across a dim purple hall, large calm dark area on the left. No people, no text, no logo." }
+]
