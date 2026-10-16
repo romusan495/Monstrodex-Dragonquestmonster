@@ -2,7 +2,7 @@
 // copié dans docs/index.html pour GitHub Pages et dans dist/carnet.html pour l'artifact Claude.
 import { defineConfig } from 'vite';
 import { viteSingleFile } from 'vite-plugin-singlefile';
-import { copyFileSync, renameSync } from 'node:fs';
+import { copyFileSync, readFileSync, renameSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -17,6 +17,19 @@ export default defineConfig({
   build: { outDir: dist, emptyOutDir: true },
   plugins: [
     viteSingleFile(),
+    {
+      // singlefile n'intègre pas les icônes <link rel="icon"> : on les met en data URI
+      name: 'icones',
+      apply: 'build',
+      transformIndexHtml: {
+        order: 'pre',
+        handler: (html) => html.replace(/(<link rel="(?:icon|apple-touch-icon)"[^>]*href=")([^"]+\.(svg|png))"/g, (_, before, href, ext) => {
+          const mime = ext === 'svg' ? 'image/svg+xml' : 'image/png';
+          const data = readFileSync(resolve(root, 'src', game, href)).toString('base64');
+          return `${before}data:${mime};base64,${data}"`;
+        }),
+      },
+    },
     {
       name: 'publier',
       apply: 'build',
