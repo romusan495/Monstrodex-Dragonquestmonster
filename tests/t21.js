@@ -1,0 +1,25 @@
+// MW4 : créer une classe, la retrouver après rechargement, onglet Armes, puis captures.
+const FILE=require('url').pathToFileURL(require('path').resolve('dist/mw4.html')).href;
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch({});
+const p=await b.newPage({viewport:{width:1100,height:900}});const e=[];p.on('pageerror',x=>e.push(x.message));
+await p.goto(FILE);await p.waitForTimeout(300);
+console.log('vide',await p.textContent('#classes'));
+await p.click('#new');
+await p.fill('#f-nom','M4 longue portée');
+await p.selectOption('#f-arme','m4-mw4');
+await p.selectOption('#f-arme2','krait-p68-mw4');
+const rows=p.locator('#f-acc .acc');
+await rows.nth(0).locator('select').selectOption('Bouche');await rows.nth(0).locator('input').fill('Silencieux test');
+await rows.nth(1).locator('select').selectOption('Crosse');await rows.nth(1).locator('input').fill('Crosse test');
+await p.fill('#f-note','Domination, cartes ouvertes');
+await p.click('#editor button[type=submit]');
+console.log('cartes',await p.locator('.card').count(),'|',await p.textContent('.card .sub'),'|',await p.locator('.accs li').count(),'accessoires');
+await p.reload();await p.waitForTimeout(300);
+console.log('après rechargement',await p.locator('.card').count(),await p.textContent('#n-classes'));
+await p.screenshot({path:'dist/mw4_classes.png'});
+await p.click('#tab-armes');
+console.log('armes',await p.locator('.wep').count(),'catégories',await p.locator('.cat').count(),'lien',await p.getAttribute('.wep','href'));
+await p.screenshot({path:'dist/mw4_armes.png',fullPage:true});
+await p.setViewportSize({width:390,height:844});await p.click('#tab-classes');await p.screenshot({path:'dist/mw4_mobile.png'});
+console.log(e);await b.close();})();

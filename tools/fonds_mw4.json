@@ -1,0 +1,6 @@
+[
+  { "nom": "ville-nuit", "seeds": [201, 202],
+    "prompt": "Wide cinematic digital painting of a modern war zone at night: a ruined city street with collapsed concrete buildings, smoke columns lit by orange fires, tracer rounds and flares in a dark teal sky, a silhouetted armored vehicle, light rain, gritty realistic military atmosphere, dark lower half for text overlay. No people faces, no text, no logo, no insignia." },
+  { "nom": "base-aube", "seeds": [211, 212],
+    "prompt": "Wide cinematic digital painting of a desert military forward operating base at dawn: sandbag walls, a helicopter silhouette taking off, distant mountains, dust haze, orange sunrise against slate blue sky, smoke trails, realistic modern military style, dark foreground for text overlay. No people faces, no text, no logo, no insignia." }
+]

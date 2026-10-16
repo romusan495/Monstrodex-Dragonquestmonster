@@ -6,6 +6,12 @@
       "runtimeExecutable": "deno",
       "runtimeArgs": ["task", "dev", "--port", "5173", "--strictPort"],
       "port": 5173
+    },
+    {
+      "name": "mw4",
+      "runtimeExecutable": "deno",
+      "runtimeArgs": ["task", "dev:mw4", "--port", "5174", "--strictPort"],
+      "port": 5174
     }
   ]
 }

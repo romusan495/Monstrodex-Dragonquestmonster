@@ -460,7 +460,12 @@ select{border:1px solid var(--edge);border-radius:10px;background:rgba(8,12,48,.
 .loc{border:1px solid var(--edge);box-shadow:none}
 .head h1{filter:drop-shadow(0 1px 0 rgba(30,14,2,.95)) drop-shadow(0 0 6px rgba(0,0,0,.85)) drop-shadow(0 4px 16px rgba(0,0,0,.7))}
 /* site name above the game title */
-.brand{display:inline-block;margin-bottom:14px;font-family:"Cinzel",serif;font-weight:700;font-size:.95rem;letter-spacing:.08em;color:#fff;text-decoration:none;
+.site{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+.jeux{display:flex;flex-wrap:wrap;gap:6px}
+.jeux a{font-size:.82rem;font-weight:600;color:var(--mute);text-decoration:none;border:1px solid var(--edge);border-radius:999px;padding:4px 12px;background:rgba(8,12,48,.5)}
+.jeux a:hover{color:#fff}
+.jeux a[aria-current="page"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.brand{display:inline-block;font-family:"Cinzel",serif;font-weight:700;font-size:.95rem;letter-spacing:.08em;color:#fff;text-decoration:none;
   background:rgba(8,12,48,.55);border:1px solid var(--edge);border-radius:999px;padding:4px 14px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .brand:hover{border-color:var(--accent);color:var(--accent)}
 /* game title: series as a spaced kicker, game name in gold */

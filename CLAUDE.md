@@ -1,6 +1,6 @@
 # L'antre de Romusan : carnet et astuces pour mes jeux
 
-Projet de Romuald (francophone). Le site s'appelle « L'antre de Romusan » (nom affiché dans l'en-tête et le titre des pages). Il regroupe, par jeu, les astuces et outils que les autres sites donnent mal ou pas du tout. Premier jeu : Dragon Quest Monsters : Le Prince des Ténèbres (DQM3).
+Projet de Romuald (francophone). Le site s'appelle « L'antre de Romusan » (nom affiché dans l'en-tête et le titre des pages). Il regroupe, par jeu, les astuces et outils que les autres sites donnent mal ou pas du tout. Jeux : Dragon Quest Monsters : Le Prince des Ténèbres (DQM3, racine du site) et Call of Duty: Modern Warfare 4 (MW4, `/mw4/`). Chaque page a un sélecteur de jeu dans l'en-tête (liens absolus vers https://romusan495.github.io/antre-de-romusan/…).
 
 ## Règles de travail
 - Tout le texte du site est en **français**. Utiliser les **noms officiels français du jeu** (wiki wikidragonquest.fr, exports HTML/JSON fournis par Romuald). Le wiki bloque les robots : ne pas contourner, demander les exports.
@@ -12,7 +12,9 @@ Projet de Romuald (francophone). Le site s'appelle « L'antre de Romusan » (nom
 - `src/dqm3/index.html` (balisage + en-tête SEO), `style.css`, `main.js` (importe `data.json` et `style.css`).
 - `src/dqm3/data.json` : données (M monstres, T traits, A compétences, K/W talents, I objets, P lieux, S sprite).
 - `assets/dqm3/` : sprite des monstres, fonds (`scene.webp` = salle du trône et vitrail, générée avec FLUX via `tools/flux_gen.ts`), référencés depuis `style.css`.
-- `vite.config.mjs` : Vite + `vite-plugin-singlefile` → un seul fichier `dist/carnet.html` (images et données incluses), copié dans `docs/index.html` (GitHub Pages). Jeu choisi par la variable `JEU` (défaut `dqm3`).
+- `src/mw4/` : carnet MW4 (mes classes en localStorage `antre-mw4-classes` avec export/import JSON, liste des armes de la bêta avec liens vers wzstats, explication de la veille). `data.json` = noms et catégories d'armes (faits du jeu) ; ne pas y recopier tier list ni classes de wzstats.
+- `vite.config.mjs` : Vite + `vite-plugin-singlefile` → un fichier HTML par jeu (images et données incluses), copié selon `SORTIES` : dqm3 → `dist/carnet.html` + `docs/index.html` ; mw4 → `dist/mw4.html` + `docs/mw4/index.html`. `deno task build` construit tous les jeux ; `deno task dev` (dqm3) / `deno task dev:mw4`.
+- Veille méta MW4 : `tools/mw4_veille.ts` lit le JSON `ng-state` de https://wzstats.gg/fr/mw4/meta, compare avec `veille/mw4-etat.json` (non versionné) et écrit `veille/mw4-rapport.md`. Tâche programmée `veille-meta-mw4` (app Claude, tous les jours à 19h).
 - Node n'est pas installé : tout passe par Deno (`deno install`, `deno task dev`, `deno task build`, `deno run -A tests/t5.js`). Chromium Playwright : `deno run -A npm:playwright install chromium`. Si un test échoue avec « Descripteur non valide (os error 6) », c'est le lancement du navigateur par Deno : relancer.
 - Git : dépôt relié à https://github.com/romusan495/antre-de-romusan (branche `main`, ancien nom Monstrodex-Dragonquestmonster). Git est dans `C:\Program Files\Git\cmd` (pas forcément dans le PATH d'une session déjà ouverte). GitHub Pages sert `main` / `/docs` (https://romusan495.github.io/antre-de-romusan/) : `deno task build` puis commit + push de `docs/index.html` met le site à jour.
 - `tools/bg_gen.py` + `tools/bg_render.js` : génèrent le fond en SVG puis en image.
