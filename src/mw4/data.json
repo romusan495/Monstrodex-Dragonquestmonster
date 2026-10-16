@@ -1,32 +1,19 @@
 {
-  "maj": "2026-10-16",
   "categories": [
-    { "id": "ASSAULT_RIFLE", "nom": "Fusils d'assaut" },
-    { "id": "SMG", "nom": "Mitraillettes" },
-    { "id": "LMG", "nom": "Mitrailleuses" },
-    { "id": "MARKSMAN_RIFLE", "nom": "Fusils tactiques" },
-    { "id": "SNIPER_RIFLE", "nom": "Fusils de précision" },
-    { "id": "SHOTGUN", "nom": "Fusils à pompe" },
-    { "id": "PISTOL", "nom": "Pistolets" }
+    { "id": "ASSAULT_RIFLE", "nom": "Fusils d'assaut", "un": "Fusil d'assaut" },
+    { "id": "SMG", "nom": "Mitraillettes", "un": "Mitraillette" },
+    { "id": "LMG", "nom": "Mitrailleuses", "un": "Mitrailleuse" },
+    { "id": "MARKSMAN_RIFLE", "nom": "Fusils tactiques", "un": "Fusil tactique" },
+    { "id": "SNIPER_RIFLE", "nom": "Fusils de précision", "un": "Fusil de précision" },
+    { "id": "SHOTGUN", "nom": "Fusils à pompe", "un": "Fusil à pompe" },
+    { "id": "PISTOL", "nom": "Pistolets", "un": "Pistolet" }
   ],
-  "armes": [
-    { "id": "m4-mw4", "nom": "M4", "cat": "ASSAULT_RIFLE" },
-    { "id": "kastov-762-mw4", "nom": "Kastov 762", "cat": "ASSAULT_RIFLE" },
-    { "id": "han-86-mw4", "nom": "Han 86", "cat": "ASSAULT_RIFLE" },
-    { "id": "partriot-xmr-mw4", "nom": "Partriot XMR", "cat": "ASSAULT_RIFLE" },
-    { "id": "hyeon-burst-mw4", "nom": "Hyeon Burst", "cat": "ASSAULT_RIFLE" },
-    { "id": "iso-nightshade-mw4", "nom": "ISO Nightshade", "cat": "SMG" },
-    { "id": "x-58-nyx-mw4", "nom": "X-58 Nyx", "cat": "SMG" },
-    { "id": "ppsh-41-mw4", "nom": "PPSh-41", "cat": "SMG" },
-    { "id": "type-73-mw4", "nom": "Type 73", "cat": "LMG" },
-    { "id": "finn-lmg-mw4", "nom": "Finn LMG", "cat": "LMG" },
-    { "id": "oris-86-mw4", "nom": "Oris 8.6", "cat": "MARKSMAN_RIFLE" },
-    { "id": "mar-9-mw4", "nom": "MAR-9", "cat": "MARKSMAN_RIFLE" },
-    { "id": "signal-50-mw4", "nom": "Signal 50", "cat": "SNIPER_RIFLE" },
-    { "id": "kg-7-vulcan-mw4", "nom": "KG-7 Vulcan", "cat": "SNIPER_RIFLE" },
-    { "id": "rezi-12-mw4", "nom": "Rezi 12", "cat": "SHOTGUN" },
-    { "id": "krait-p68-mw4", "nom": "Krait P68", "cat": "PISTOL" },
-    { "id": "50-gs-mw4", "nom": ".50 GS", "cat": "PISTOL" }
-  ],
-  "emplacements": ["Bouche", "Canon", "Accessoire canon", "Sous-canon", "Poignée arrière", "Crosse", "Laser", "Lunette", "Munitions", "Chargeur"]
+  "slots": {
+    "optic": "Lunette", "muzzle": "Bouche", "barrel": "Canon", "underbarrel": "Accessoire canon",
+    "magazine": "Chargeur", "ammunition": "Munitions", "rearGrip": "Poignée arrière", "stock": "Crosse", "laser": "Laser"
+  },
+  "styles": {
+    "VERSATILE": "Polyvalent", "LOW_LEVEL": "Faible niveau", "APEX": "Apex", "ADS_SPEED": "Visée rapide",
+    "LONG_RANGE": "Longue portée", "SHORT_RANGE": "Courte portée", "SNIPER": "Précision", "SNIPER_SUPPORT": "Soutien précision"
+  }
 }

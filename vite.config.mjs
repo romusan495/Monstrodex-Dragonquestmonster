@@ -13,7 +13,8 @@ const tmp = resolve(root, 'dist', `.build-${game}`);
 
 // Jeu → fichiers publiés (relatifs à la racine du projet)
 const SORTIES = {
-  dqm3: ['dist/carnet.html', 'docs/index.html'],
+  accueil: ['dist/accueil.html', 'docs/index.html'],
+  dqm3: ['dist/carnet.html', 'docs/dqm3/index.html'],
   mw4: ['dist/mw4.html', 'docs/mw4/index.html'],
 };
 

@@ -4,7 +4,7 @@
   "type": "commonjs",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && JEU=mw4 vite build",
+    "build": "JEU=accueil vite build && vite build && JEU=mw4 vite build",
     "dev:mw4": "JEU=mw4 vite",
     "test": "deno run -A tests/t5.js && deno run -A tests/t7.js && deno run -A tests/t9.js && deno run -A tests/t14.js && deno run -A tests/t21.js"
   },

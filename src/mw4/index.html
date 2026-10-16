@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Modern Warfare 4 · L'antre de Romusan</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Carnet personnel pour Call of Duty: Modern Warfare 4 : mes classes, les armes de la bêta et les liens vers les classes recommandées.">
+<meta name="description" content="Modern Warfare 4 : les armes de la bêta multijoueur par tier, avec leurs classes recommandées (accessoires et niveaux de déblocage).">
 <meta name="robots" content="index,follow">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="L'antre de Romusan">
@@ -21,69 +21,42 @@
 </head>
 <body>
 <div class="bg" aria-hidden="true"><div class="bgi"></div><div class="bgv"></div></div>
-<div id="toast" class="toast" role="status" hidden></div>
 <div class="wrap">
   <header class="head">
     <div class="site">
       <a class="brand" href="https://romusan495.github.io/antre-de-romusan/">L'antre de Romusan</a>
       <nav class="jeux" aria-label="Jeux">
-        <a href="https://romusan495.github.io/antre-de-romusan/">Le Prince des Ténèbres</a>
+        <a href="https://romusan495.github.io/antre-de-romusan/dqm3/">Le Prince des Ténèbres</a>
         <a href="https://romusan495.github.io/antre-de-romusan/mw4/" aria-current="page">Modern Warfare 4</a>
       </nav>
     </div>
     <h1><span class="h-serie">Call of Duty</span> <span class="h-jeu">Modern Warfare 4</span></h1>
-    <p class="intro">Mon carnet pour MW4 : je note mes classes ici, et je garde sous la main les armes de la bêta avec un lien vers leur classe recommandée.</p>
+    <p class="intro">Les armes de la bêta multijoueur, de la plus forte à la moins forte, avec leurs classes recommandées : accessoires et niveau d'arme pour les débloquer.</p>
   </header>
 
   <nav class="tabs" role="tablist" aria-label="Sections">
-    <button type="button" role="tab" id="tab-classes" aria-selected="true" data-view="classes">Mes classes</button>
-    <button type="button" role="tab" id="tab-armes" aria-selected="false" data-view="armes">Armes</button>
+    <button type="button" role="tab" id="tab-armes" aria-selected="true" data-view="armes">Armes</button>
     <button type="button" role="tab" id="tab-veille" aria-selected="false" data-view="veille">Veille méta</button>
   </nav>
 
-  <section id="view-classes" role="tabpanel" aria-labelledby="tab-classes">
-    <div class="bar">
-      <button type="button" class="btn primary" id="new">+ Nouvelle classe</button>
-      <span class="count" id="n-classes"></span>
-    </div>
-    <form id="editor" class="panel" hidden>
-      <h2 id="ed-title">Nouvelle classe</h2>
-      <div class="grid2">
-        <label>Nom de la classe<input id="f-nom" type="text" maxlength="40" placeholder="Ex. M4 longue portée" required></label>
-        <label>Arme principale<select id="f-arme" required></select></label>
-        <label>Arme secondaire<select id="f-arme2"></select></label>
-      </div>
-      <fieldset>
-        <legend>Accessoires (5 au maximum, à confirmer dans le jeu final)</legend>
-        <div id="f-acc"></div>
-      </fieldset>
-      <label>Notes<textarea id="f-note" rows="2" maxlength="400" placeholder="Mode de jeu, carte, atouts…"></textarea></label>
-      <div class="actions">
-        <button type="submit" class="btn primary">Enregistrer</button>
-        <button type="button" class="btn" id="cancel">Annuler</button>
-      </div>
-    </form>
-    <div id="classes"></div>
-    <p class="hint">Tes classes sont enregistrées dans ce navigateur uniquement. <button type="button" class="linkbtn" id="export">Exporter</button> · <label class="linkbtn">Importer<input type="file" id="import" accept="application/json" hidden></label></p>
-  </section>
-
-  <section id="view-armes" role="tabpanel" aria-labelledby="tab-armes" hidden>
-    <p class="note">Les <span id="n-armes"></span> armes connues de la bêta multijoueur, par catégorie. Les noms viennent de la bêta et peuvent changer à la sortie (à confirmer). Le lien ouvre la classe recommandée sur wzstats.gg.</p>
+  <section id="view-armes" role="tabpanel" aria-labelledby="tab-armes">
+    <div class="filters" id="filtres" role="group" aria-label="Catégorie"></div>
+    <p class="note">Classes mises à jour le <b id="maj"></b>. Les noms viennent de la bêta et peuvent changer à la sortie du jeu (à confirmer). Source des tiers et des classes : <a href="https://wzstats.gg/fr/mw4/meta" target="_blank" rel="noopener">wzstats.gg</a>.</p>
     <div id="armes"></div>
   </section>
 
   <section id="view-veille" role="tabpanel" aria-labelledby="tab-veille" hidden>
     <div class="panel">
       <h2>Comment marche la veille</h2>
-      <p>Chaque soir à 19h, Claude relit la page méta MW4 de wzstats.gg et la compare avec la veille : armes qui montent ou descendent de tier, classes mises à jour. S'il y a du nouveau, je reçois une notification avec le résumé et les liens.</p>
-      <p>La tier list et les classes restent la propriété de wzstats.gg : elles ne sont pas recopiées ici.</p>
+      <p>Chaque soir à 19h, Claude relit la méta MW4 de wzstats.gg et la compare avec la veille : armes qui montent ou descendent de tier, classes modifiées. S'il y a du nouveau, je reçois une notification et la page est mise à jour.</p>
+      <p>Seules les pages d'armes dont la classe a changé sont relues, pour ne pas surcharger le site source.</p>
       <p><a class="btn primary" href="https://wzstats.gg/fr/mw4/meta" target="_blank" rel="noopener">Voir la méta MW4 sur wzstats.gg</a></p>
     </div>
   </section>
 
   <footer class="foot">
     <p>Site personnel, sans lien avec Activision ni Infinity Ward. Call of Duty et Modern Warfare sont des marques d'Activision. Fond original généré pour ce site.</p>
-    <p>Classes recommandées et méta : <a href="https://wzstats.gg/fr/mw4/meta" target="_blank" rel="noopener">wzstats.gg</a>.</p>
+    <p>Tiers et classes recommandées : <a href="https://wzstats.gg/fr/mw4/meta" target="_blank" rel="noopener">wzstats.gg</a>, repris avec un lien vers la page d'origine de chaque arme.</p>
   </footer>
 </div>
 <script type="module" src="./main.js"></script>

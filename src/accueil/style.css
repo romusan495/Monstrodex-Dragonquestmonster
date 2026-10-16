@@ -1,0 +1,35 @@
+/* Accueil : une carte par jeu, chacune dans les couleurs de son jeu. */
+:root{color-scheme:dark;--bg:#0d0828;--ink:#f3efff;--mute:#bdb4dc;--edge:rgba(200,185,255,.22);--or:#ffd451}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.45;
+  background:radial-gradient(ellipse at 50% -10%,#3a1d7a 0%,rgba(13,8,40,0) 60%),var(--bg);
+  padding:0 max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px))}
+.wrap{max-width:980px;margin:0 auto}
+:focus-visible{outline:3px solid var(--or);outline-offset:3px}
+
+.head{text-align:center;padding:48px 0 28px;display:grid;justify-items:center;gap:10px}
+.logo{border-radius:16px;box-shadow:0 8px 30px rgba(255,170,80,.25)}
+.head h1{margin:0;font-family:"Cinzel",serif;font-size:clamp(2rem,6vw,3.4rem);line-height:1.05;
+  background:linear-gradient(180deg,#fff7cf 0%,#ffd451 50%,#e3891c 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 3px 12px rgba(0,0,0,.6))}
+.head p{margin:0;color:var(--mute);max-width:52ch}
+
+.jeux{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.jeu{display:grid;grid-template-rows:auto 1fr;height:100%;border-radius:18px;overflow:hidden;text-decoration:none;color:var(--ink);
+  border:1px solid var(--edge);background:rgba(20,14,48,.8);box-shadow:0 12px 32px rgba(0,0,0,.4);transition:transform .2s,border-color .2s}
+.jeu:hover{transform:translateY(-3px);border-color:var(--c)}
+.img{display:block;aspect-ratio:16/9;background:center/cover no-repeat}
+.txt{display:grid;gap:4px;padding:14px 18px 18px}
+.serie{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+.titre{font-size:1.6rem;line-height:1.1}
+.desc{color:var(--mute);font-size:.92rem}
+.dqm3 .img{background-image:url(../../assets/accueil/dqm3.webp)}
+.mw4 .img{background-image:url(../../assets/accueil/mw4.webp)}
+.dqm3{--c:var(--or)}
+.dqm3 .titre{font-family:"Cinzel",serif;color:var(--or)}
+.mw4{--c:#ff8a1f;background:rgba(12,17,24,.85)}
+.mw4 .titre{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.02em}
+
+.foot{margin-top:32px;text-align:center;color:var(--mute);font-size:.84rem}
+@media (prefers-reduced-motion:reduce){.jeu{transition:none}.jeu:hover{transform:none}}

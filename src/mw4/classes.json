@@ -1,0 +1,952 @@
+{
+ "source": "https://wzstats.gg/fr/mw4/meta",
+ "maj": "2026-09-11",
+ "armes": [
+  {
+   "id": "m4-mw4",
+   "nom": "M4",
+   "cat": "ASSAULT_RIFLE",
+   "tier": "META",
+   "rang": 1,
+   "lien": "https://wzstats.gg/fr/best-loadouts/m4-mw4",
+   "builds": [
+    {
+     "style": "APEX",
+     "apex": "M4 Hurricane",
+     "acc": [
+      {
+       "slot": "optic",
+       "nom": "IOTA-D",
+       "niv": 63
+      },
+      {
+       "slot": "muzzle",
+       "nom": "FSS IS300",
+       "niv": 4
+      },
+      {
+       "slot": "underbarrel",
+       "nom": "FSS FIRELINE GRIP",
+       "niv": 37
+      },
+      {
+       "slot": "stock",
+       "nom": "Hurricane Stock",
+       "niv": 68
+      },
+      {
+       "slot": "laser",
+       "nom": "SA LAZ-500",
+       "niv": 24
+      }
+     ]
+    },
+    {
+     "style": "VERSATILE",
+     "acc": [
+      {
+       "slot": "muzzle",
+       "nom": "FSS IS300",
+       "niv": 4
+      },
+      {
+       "slot": "underbarrel",
+       "nom": "FSS FIRELINE GRIP",
+       "niv": 37
+      },
+      {
+       "slot": "rearGrip",
+       "nom": "ZLR PHASE GRIP",
+       "niv": 52
+      },
+      {
+       "slot": "stock",
+       "nom": "ZLR ASP50 STOCK",
+       "niv": 42
+      },
+      {
+       "slot": "laser",
+       "nom": "SA LAZ-500",
+       "niv": 24
+      }
+     ]
+    },
+    {
+     "style": "LOW_LEVEL",
+     "acc": [
+      {
+       "slot": "optic",
+       "nom": "SLIMLINE ELITE",
+       "niv": 13
+      },
+      {
+       "slot": "muzzle",
+       "nom": "FSS IS300",
+       "niv": 4
+      },
+      {
+       "slot": "ammunition",
+       "nom": "MUNITIONS HAUTE PRESSION 5,5",
+       "niv": 3
+      },
+      {
+       "slot": "stock",
+       "nom": "PF1 FIXED STOCK",
+       "niv": 14
+      },
+      {
+       "slot": "laser",
+       "nom": "SZ GEN.6 PEQ",
+       "niv": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "iso-nightshade-mw4",
+   "nom": "ISO NIGHTSHADE",
+   "cat": "SMG",
+   "tier": "META",
+   "rang": 2,
+   "lien": "https://wzstats.gg/fr/best-loadouts/iso-nightshade-mw4",
+   "builds": [
+    {
+     "style": "VERSATILE",
+     "acc": [
+      {
+       "slot": "muzzle",
+       "nom": "FSS CRACKDOWN",
+       "niv": 4
+      },
+      {
+       "slot": "barrel",
+       "nom": "ZLR CARBON-900",
+       "niv": 35
+      },
+      {
+       "slot": "rearGrip",
+       "nom": "DEMO STP-1",
+       "niv": 6
+      },
+      {
+       "slot": "stock",
+       "nom": "GI-80 MILSPEC STOCK",
+       "niv": 15
+      },
+      {
+       "slot": "laser",
+       "nom": "XRK CLUTCH-LS",
+       "niv": 29
+      }
+     ]
+    },
+    {
+     "style": "LOW_LEVEL",
+     "acc": [
+      {
+       "slot": "muzzle",
+       "nom": "FSS CRACKDOWN",
+       "niv": 4
+      },
+      {
+       "slot": "barrel",
+       "nom": "ZLR MAG-Z 9\"",
+       "niv": 2
+      },
+      {
+       "slot": "ammunition",
+       "nom": "9MM PARABELLUM FRANGIBLE",
+       "niv": 8
+      },
+      {
+       "slot": "rearGrip",
+       "nom": "DEMO STP-1",
+       "niv": 6
+      },
+      {
+       "slot": "stock",
+       "nom": "GI-80 MILSPEC STOCK",
+       "niv": 15
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kastov-762-mw4",
+   "nom": "KASTOV 762",
+   "cat": "ASSAULT_RIFLE",
+   "tier": "META",
+   "rang": 3,
+   "lien": "https://wzstats.gg/fr/best-loadouts/kastov-762-mw4",
+   "builds": [
+    {
+     "style": "VERSATILE",
+     "acc": [
+      {
+       "slot": "optic",
+       "nom": "CRONEN ZERO-K",
+       "niv": 35
+      },
+      {
+       "slot": "barrel",
+       "nom": "FJX GHOSTFIRE 16.3\"",
+       "niv": 61
+      },
+      {
+       "slot": "underbarrel",
+       "nom": "FSS TAC90 GRIP",
+       "niv": 47
+      },
+      {
+       "slot": "stock",
+       "nom": "KASTOV DOGFIGHTER 27",
+       "niv": 42
+      },
+      {
+       "slot": "laser",
+       "nom": "SCHLAGER VISIV-5",
+       "niv": 30
+      }
+     ]
+    },
+    {
+     "style": "APEX",
+     "apex": "KASTOV 545",
+     "acc": [
+      {
+       "slot": "muzzle",
+       "nom": "GAUGE-12 MONO",
+       "niv": 34
+      },
+      {
+       "slot": "barrel",
+       "nom": "HANBIT 74U 205.74MM",
+       "niv": 24
+      },
+      {
+       "slot": "underbarrel",
+       "nom": "FSS FIRELINE GRIP",
+       "niv": 3
+      },
+      {
+       "slot": "stock",
+       "nom": "KASTOV COMBAT LITE STOCK",
+       "niv": 27
+      },
+      {
+       "slot": "laser",
+       "nom": "XRK CLUTCH-LS",
+       "niv": 53
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "type-73-mw4",
+   "nom": "TYPE 73",
+   "cat": "LMG",
+   "tier": "META",
+   "rang": 4,
+   "lien": "https://wzstats.gg/fr/best-loadouts/type-73-mw4",
+   "builds": [
+    {
+     "style": "LOW_LEVEL",
+     "acc": [
+      {
+       "slot": "optic",
+       "nom": "FJX 708 PRO",
+       "niv": 8
+      },
+      {
+       "slot": "muzzle",
+       "nom": "IVANOV QR600",
+       "niv": 0
+      },
+      {
+       "slot": "barrel",
+       "nom": "RSS-40F 12\"",
+       "niv": 4
+      },
+      {
+       "slot": "rearGrip",
+       "nom": "EXP ZBR-904",
+       "niv": 9
+      },
+      {
+       "slot": "laser",
+       "nom": "QFL-S4.5",
+       "niv": 6
+      }
+     ]
+    },
+    {
+     "style": "APEX",
+     "apex": "TYPE 73 ASSAULT",
+     "acc": [
+      {
+       "slot": "optic",
+       "nom": "IOTA-D",
+       "niv": 35
+      },
+      {
+       "slot": "muzzle",
+       "nom": "GAUGE-12 MONO",
+       "niv": 39
+      },
+      {
+       "slot": "barrel",
+       "nom": "HAEBANG ET-9D 772.16MM",
+       "niv": 34
+      },
+      {
+       "slot": "stock",
+       "nom": "FTAC RZRO STOCK",
+       "niv": 22
+      },
+      {
+       "slot": "laser",
+       "nom": "SCHLAGER VISIV-5",
+       "niv": 25
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "x-58-nyx-mw4",
+   "nom": "X-58 NYX",
+   "cat": "SMG",
+   "tier": "META",
+   "rang": 5,
+   "lien": "https://wzstats.gg/fr/best-loadouts/x-58-nyx-mw4",
+   "builds": [
+    {
+     "style": "VERSATILE",
+     "acc": [
+      {
+       "slot": "barrel",
+       "nom": "LX3-V 408.94MM",
+       "niv": 39
+      },
+      {
+       "slot": "underbarrel",
+       "nom": "FSS FIRELINE GRIP",
+       "niv": 17
+      },
+      {
+       "slot": "ammunition",
+       "nom": "5.8X21MM OVERPRESSUR",
+       "niv": 8
+      },
+      {
+       "slot": "rearGrip",
+       "nom": "BOK-980",
+       "niv": 18
+      },
+      {
+       "slot": "laser",
+       "nom": "XRK CLUTCH-LS",
+       "niv": 34
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "oris-86-mw4",
+   "nom": "ORIS 8.6",
+   "cat": "MARKSMAN_RIFLE",
+   "tier": "META",
+   "rang": 6,
+   "lien": "https://wzstats.gg/fr/best-loadouts/oris-86-mw4",
+   "builds": [
+    {
+     "style": "APEX",
+     "apex": "ORIS 8.6 RAZOR",
+     "acc": [
+      {
+       "slot": "optic",
+       "nom": "SZ MICRO D-3",
+       "niv": 30
+      },
+      {
+       "slot": "muzzle",
+       "nom": "EXP UNDERTOW GEN. 2",
+       "niv": 54
+      },
+      {
+       "slot": "stock",
+       "nom": "BR7 INVADER",
+       "niv": 22
+      },
+      {
+       "slot": "laser",
+       "nom": "SCHLAGER VISIV-5",
+       "niv": 8
+      }
+     ]
+    },
+    {
+     "style": "LOW_LEVEL",
+     "acc": [
+      {
+       "slot": "optic",
+       "nom": "CRONEN R808",
+       "niv": 12
+      },
+      {
+       "slot": "muzzle",
+       "nom": "MATUZEK BLACKVEIL",
+       "niv": 14
+      },
+      {
+       "slot": "magazine",
+       "nom": "6 ROUND MAG",
+       "niv": 11
+      },
+      {
+       "slot": "stock",
+       "nom": "PAS DE CROSSE",
+       "niv": 3
+      },
+      {
+       "slot": "laser",
+       "nom": "SCHLAGER VISIV-5",
+       "niv": 8
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "han-86-mw4",
+   "nom": "HAN 86",
+   "cat": "ASSAULT_RIFLE",
+   "tier": "A",
+   "rang": 1,
+   "lien": "https://wzstats.gg/fr/best-loadouts/han-86-mw4",
+   "builds": [
+    {
+     "style": "LOW_LEVEL",
+     "acc": [
+      {
+       "slot": "optic",
+       "nom": "SZ MICRO D-3",
+       "niv": 0
+      },
+      {
+       "slot": "barrel",
+       "nom": "HANBIT RK8 406.4MM",
+       "niv": 0
+      },
+      {
+       "slot": "ammunition",
+       "nom": "5.56 NATO FRANGIBLE",
+       "niv": 0
+      },
+      {
+       "slot": "stock",
+       "nom": "FR4 RETRACTABLE STOCK",
+       "niv": 0
+      },
+      {
+       "slot": "laser",
+       "nom": "XRK CLUTCH-LS",
+       "niv": 0
+      }
+     ]
+    },
+    {
+     "style": "VERSATILE",
+     "acc": [
+      {
+       "slot": "barrel",
+       "nom": "HAN 86 SILENCED 412.75MM",
+       "niv": 0
+      },
+      {
+       "slot": "underbarrel",
+       "nom": "FSS TAC90 GRIP",
+       "niv": 0
+      },
+      {
+       "slot": "ammunition",
+       "nom": "5.56 NATO FRANGIBLE",
+       "niv": 0
+      },
+      {
+       "slot": "stock",
+       "nom": "MEIKO L9P-FOLD",
+       "niv": 0
+      },
+      {
+       "slot": "laser",
+       "nom": "SCHLAGER VISIV-5",
+       "niv": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ppsh-41-mw4",
+   "nom": "PPSH-41",
+   "cat": "SMG",
+   "tier": "A",
+   "rang": 2,
+   "lien": "https://wzstats.gg/fr/best-loadouts/ppsh-41-mw4",
+   "builds": [
+    {
+     "style": "LOW_LEVEL",
+     "acc": [
+      {
+       "slot": "muzzle",
+       "nom": "FTAC SILENT RECON",
+       "niv": 11
+      },
+      {
+       "slot": "barrel",
+       "nom": "HANBIT RDR-TIGER 50-XL",
+       "niv": 14
+      },
+      {
+       "slot": "magazine",
+       "nom": "53 ROUND MAG",
+       "niv": 3
+      },
+      {
+       "slot": "ammunition",
+       "nom": "7.62 TOKAREV OVERPRESSURED",
+       "niv": 9
+      },
+      {
+       "slot": "laser",
+       "nom": "SCHLAGER VISIV-5",
+       "niv": 4
+      }
+     ]
+    },
+    {
+     "style": "VERSATILE",
+     "acc": [
+      {
+       "slot": "muzzle",
+       "nom": "FTAC SILENT RECON",
+       "niv": 11
+      },
+      {
+       "slot": "barrel",
+       "nom": "HANBIT RDR-TIGER 50-XL",
+       "niv": 14
+      },
+      {
+       "slot": "magazine",
+       "nom": "53 ROUND MAG",
+       "niv": 3
+      },
+      {
+       "slot": "ammunition",
+       "nom": "7.62 TOKAREV FRANGIBLE",
+       "niv": 26
+      },
+      {
+       "slot": "laser",
+       "nom": "SCHLAGER VISIV-5",
+       "niv": 4
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "rezi-12-mw4",
+   "nom": "REZI 12",
+   "cat": "SHOTGUN",
+   "tier": "A",
+   "rang": 3,
+   "lien": "https://wzstats.gg/fr/best-loadouts/rezi-12-mw4",
+   "builds": [
+    {
+     "style": "LOW_LEVEL",
+     "acc": [
+      {
+       "slot": "optic",
+       "nom": "ZLR TYPE C",
+       "niv": 14
+      },
+      {
+       "slot": "muzzle",
+       "nom": "SAKIN OMEGA 13",
+       "niv": 13
+      },
+      {
+       "slot": "laser",
+       "nom": "SCHLAGER VISIV-5",
+       "niv": 5
+      }
+     ]
+    },
+    {
+     "style": "VERSATILE",
+     "acc": [
+      {
+       "slot": "muzzle",
+       "nom": "EXP FIRELITE 12",
+       "niv": 24
+      },
+      {
+       "slot": "stock",
+       "nom": "TV XR-14 KILO",
+       "niv": 58
+      },
+      {
+       "slot": "laser",
+       "nom": "SCHLAGER VISIV-5",
+       "niv": 5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mar-9-mw4",
+   "nom": "MAR-9",
+   "cat": "MARKSMAN_RIFLE",
+   "tier": "A",
+   "rang": 4,
+   "lien": "https://wzstats.gg/fr/best-loadouts/mar-9-mw4",
+   "builds": [
+    {
+     "style": "VERSATILE",
+     "acc": [
+      {
+       "slot": "optic",
+       "nom": "FJX 708 PRO",
+       "niv": 49
+      },
+      {
+       "slot": "barrel",
+       "nom": "BRUEN REAPER-X",
+       "niv": 20
+      },
+      {
+       "slot": "underbarrel",
+       "nom": "FSS TAC90 GRIP",
+       "niv": 4
+      },
+      {
+       "slot": "rearGrip",
+       "nom": "HANBIT WRAP 76",
+       "niv": 36
+      },
+      {
+       "slot": "laser",
+       "nom": "SA LAZ-500",
+       "niv": 33
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "finn-lmg-mw4",
+   "nom": "FINN LMG",
+   "cat": "LMG",
+   "tier": "A",
+   "rang": 5,
+   "lien": "https://wzstats.gg/fr/best-loadouts/finn-lmg-mw4",
+   "builds": [
+    {
+     "style": "LOW_LEVEL",
+     "acc": [
+      {
+       "slot": "optic",
+       "nom": "SLIMLINE ELITE",
+       "niv": 7
+      },
+      {
+       "slot": "muzzle",
+       "nom": "FTAC DOMINION",
+       "niv": 9
+      },
+      {
+       "slot": "barrel",
+       "nom": "FTAC FIREBASE-70 15\"",
+       "niv": 2
+      },
+      {
+       "slot": "rearGrip",
+       "nom": "XRK AURA-5",
+       "niv": 8
+      },
+      {
+       "slot": "stock",
+       "nom": "HANBIT TECH50 GEN.5",
+       "niv": 5
+      }
+     ]
+    },
+    {
+     "style": "VERSATILE",
+     "acc": [
+      {
+       "slot": "optic",
+       "nom": "IOTA-D",
+       "niv": 40
+      },
+      {
+       "slot": "muzzle",
+       "nom": "XRK MIL-TAC SUPPRESSOR",
+       "niv": 36
+      },
+      {
+       "slot": "underbarrel",
+       "nom": "BRUEN RENEGADE GRIP",
+       "niv": 45
+      },
+      {
+       "slot": "magazine",
+       "nom": "75 ROUND BOX MAG",
+       "niv": 34
+      },
+      {
+       "slot": "laser",
+       "nom": "SZ GEN.6 PEQ",
+       "niv": 44
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "signal-50-mw4",
+   "nom": "SIGNAL 50",
+   "cat": "SNIPER_RIFLE",
+   "tier": "A",
+   "rang": 6,
+   "lien": "https://wzstats.gg/fr/best-loadouts/signal-50-mw4",
+   "builds": [
+    {
+     "style": "APEX",
+     "apex": "SIGNAL 50 INFERNO",
+     "acc": [
+      {
+       "slot": "muzzle",
+       "nom": "FSS MOODKILLER",
+       "niv": 33
+      },
+      {
+       "slot": "barrel",
+       "nom": "TV ICARUS 50 24.5\"",
+       "niv": 61
+      },
+      {
+       "slot": "rearGrip",
+       "nom": "GL ZERO DROP 6",
+       "niv": 66
+      },
+      {
+       "slot": "stock",
+       "nom": "CRONEN SN-PAD50",
+       "niv": 26
+      },
+      {
+       "slot": "laser",
+       "nom": "XRK CLUTCH-LS",
+       "niv": 40
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kg-7-vulcan-mw4",
+   "nom": "KG-7 VULCAN",
+   "cat": "SNIPER_RIFLE",
+   "tier": "A",
+   "rang": 7,
+   "lien": "https://wzstats.gg/fr/best-loadouts/kg-7-vulcan-mw4",
+   "builds": [
+    {
+     "style": "LOW_LEVEL",
+     "acc": [
+      {
+       "slot": "optic",
+       "nom": "HANBIT 3080 FIRELINE",
+       "niv": 13
+      },
+      {
+       "slot": "muzzle",
+       "nom": "DS RKT-90",
+       "niv": 4
+      },
+      {
+       "slot": "barrel",
+       "nom": "TT BAEM 12\"",
+       "niv": 5
+      },
+      {
+       "slot": "laser",
+       "nom": "SCHLAGER VISIV-5",
+       "niv": 7
+      }
+     ]
+    },
+    {
+     "style": "ADS_SPEED",
+     "acc": [
+      {
+       "slot": "muzzle",
+       "nom": "IVANOV QR600",
+       "niv": 62
+      },
+      {
+       "slot": "barrel",
+       "nom": "HAEBANG NASEON V.5 26\"",
+       "niv": 21
+      },
+      {
+       "slot": "stock",
+       "nom": "TT G76-RP STOCK",
+       "niv": 46
+      },
+      {
+       "slot": "laser",
+       "nom": "SCHLAGER VISIV-5",
+       "niv": 7
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "partriot-xmr-mw4",
+   "nom": "PARTRIOT XMR",
+   "cat": "ASSAULT_RIFLE",
+   "tier": "B",
+   "rang": 1,
+   "lien": "https://wzstats.gg/fr/best-loadouts/partriot-xmr-mw4",
+   "builds": [
+    {
+     "style": "VERSATILE",
+     "acc": [
+      {
+       "slot": "optic",
+       "nom": "FJX 708 PRO",
+       "niv": 0
+      },
+      {
+       "slot": "muzzle",
+       "nom": "EXP UNDERTOW GEN. 2",
+       "niv": 0
+      },
+      {
+       "slot": "underbarrel",
+       "nom": "FSS FIRELINE GRIP",
+       "niv": 0
+      },
+      {
+       "slot": "rearGrip",
+       "nom": "SCHLAGER ATTACK-7 GRIP",
+       "niv": 28
+      },
+      {
+       "slot": "laser",
+       "nom": "SA LAZ-500",
+       "niv": 0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hyeon-burst-mw4",
+   "nom": "HYEON BURST",
+   "cat": "ASSAULT_RIFLE",
+   "tier": "B",
+   "rang": 2,
+   "lien": "https://wzstats.gg/fr/best-loadouts/hyeon-burst-mw4",
+   "builds": [
+    {
+     "style": "APEX",
+     "apex": "HYEON HYPERBURST",
+     "acc": [
+      {
+       "slot": "optic",
+       "nom": "IOTA-D",
+       "niv": 33
+      },
+      {
+       "slot": "muzzle",
+       "nom": "FSS IS300",
+       "niv": 63
+      },
+      {
+       "slot": "barrel",
+       "nom": "MUGI INGOEM 558.8MM",
+       "niv": 46
+      },
+      {
+       "slot": "underbarrel",
+       "nom": "FSS TAC90 GRIP",
+       "niv": 39
+      },
+      {
+       "slot": "laser",
+       "nom": "SZ GEN.6 PEQ",
+       "niv": 4
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "krait-p68-mw4",
+   "nom": "KRAIT P68",
+   "cat": "PISTOL",
+   "tier": "C",
+   "rang": 1,
+   "lien": "https://wzstats.gg/fr/best-loadouts/krait-p68-mw4",
+   "builds": [
+    {
+     "style": "APEX",
+     "apex": "Krait P68 Commando",
+     "acc": [
+      {
+       "slot": "muzzle",
+       "nom": "SFO Proto-33",
+       "niv": 25
+      },
+      {
+       "slot": "barrel",
+       "nom": "XRK DOC-40 6\"",
+       "niv": 21
+      },
+      {
+       "slot": "rearGrip",
+       "nom": "Magtac .45",
+       "niv": 5
+      },
+      {
+       "slot": "laser",
+       "nom": "GW 700-V",
+       "niv": 18
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "50-gs-mw4",
+   "nom": ".50 GS",
+   "cat": "PISTOL",
+   "tier": "D",
+   "rang": 1,
+   "lien": "https://wzstats.gg/fr/best-loadouts/50-gs-mw4",
+   "builds": []
+  }
+ ]
+}
