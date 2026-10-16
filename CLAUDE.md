@@ -14,7 +14,7 @@ Projet de Romuald (francophone). Le site regroupe, par jeu, les astuces et outil
 - `assets/dqm3/` : sprite des monstres, fonds (`scene.webp` = fond château/lune), référencés depuis `style.css`.
 - `vite.config.mjs` : Vite + `vite-plugin-singlefile` → un seul fichier `dist/carnet.html` (images et données incluses), copié dans `docs/index.html` (GitHub Pages). Jeu choisi par la variable `JEU` (défaut `dqm3`).
 - Node n'est pas installé : tout passe par Deno (`deno install`, `deno task dev`, `deno task build`, `deno run -A tests/t5.js`). Chromium Playwright : `deno run -A npm:playwright install chromium`. Si un test échoue avec « Descripteur non valide (os error 6) », c'est le lancement du navigateur par Deno : relancer.
-- Git : dépôt relié à https://github.com/romusan495/Monstrodex-Dragonquestmonster (branche `main`). Git est dans `C:\Program Files\Git\cmd` (pas forcément dans le PATH d'une session déjà ouverte). Le site en ligne est le `index.html` racine, envoyé à la main par Romuald ; `docs/index.html` est la sortie du build.
+- Git : dépôt relié à https://github.com/romusan495/Monstrodex-Dragonquestmonster (branche `main`). Git est dans `C:\Program Files\Git\cmd` (pas forcément dans le PATH d'une session déjà ouverte). GitHub Pages sert `main` / `/docs` (https://romusan495.github.io/Monstrodex-Dragonquestmonster/) : `deno task build` puis commit + push de `docs/index.html` met le site à jour.
 - `tools/bg_gen.py` + `tools/bg_render.js` : génèrent le fond en SVG puis en image.
 - `tests/*.js` : tests Playwright sur `dist/carnet.html` et `docs/index.html` (lancer le build avant).
 
