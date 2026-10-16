@@ -459,6 +459,10 @@ select{border:1px solid var(--edge);border-radius:10px;background:rgba(8,12,48,.
 .mon.is-fnd:has(.detail){background:linear-gradient(160deg,rgb(112,86,14),rgb(52,38,7))}
 .loc{border:1px solid var(--edge);box-shadow:none}
 .head h1{filter:drop-shadow(0 1px 0 rgba(30,14,2,.95)) drop-shadow(0 0 6px rgba(0,0,0,.85)) drop-shadow(0 4px 16px rgba(0,0,0,.7))}
+/* site name above the game title */
+.brand{display:inline-block;margin-bottom:14px;font-family:"Cinzel",serif;font-weight:700;font-size:.95rem;letter-spacing:.08em;color:#fff;text-decoration:none;
+  background:rgba(8,12,48,.55);border:1px solid var(--edge);border-radius:999px;padding:4px 14px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.brand:hover{border-color:var(--accent);color:var(--accent)}
 /* game title: series as a spaced kicker, game name in gold */
 .head h1{display:grid;gap:4px}
 .head h1 .h-serie{font-size:clamp(.8rem,2.2vw,1.1rem);letter-spacing:.34em;text-transform:uppercase;color:#efeaff}

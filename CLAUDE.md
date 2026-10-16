@@ -1,6 +1,6 @@
-# Site-jeux : carnet et astuces pour mes jeux
+# L'antre de Romusan : carnet et astuces pour mes jeux
 
-Projet de Romuald (francophone). Le site regroupe, par jeu, les astuces et outils que les autres sites donnent mal ou pas du tout. Premier jeu : Dragon Quest Monsters : Le Prince des Ténèbres (DQM3).
+Projet de Romuald (francophone). Le site s'appelle « L'antre de Romusan » (nom affiché dans l'en-tête et le titre des pages). Il regroupe, par jeu, les astuces et outils que les autres sites donnent mal ou pas du tout. Premier jeu : Dragon Quest Monsters : Le Prince des Ténèbres (DQM3).
 
 ## Règles de travail
 - Tout le texte du site est en **français**. Utiliser les **noms officiels français du jeu** (wiki wikidragonquest.fr, exports HTML/JSON fournis par Romuald). Le wiki bloque les robots : ne pas contourner, demander les exports.
@@ -11,10 +11,10 @@ Projet de Romuald (francophone). Le site regroupe, par jeu, les astuces et outil
 ## Structure
 - `src/dqm3/index.html` (balisage + en-tête SEO), `style.css`, `main.js` (importe `data.json` et `style.css`).
 - `src/dqm3/data.json` : données (M monstres, T traits, A compétences, K/W talents, I objets, P lieux, S sprite).
-- `assets/dqm3/` : sprite des monstres, fonds (`scene.webp` = fond château/lune), référencés depuis `style.css`.
+- `assets/dqm3/` : sprite des monstres, fonds (`scene.webp` = salle du trône et vitrail, générée avec FLUX via `tools/flux_gen.ts`), référencés depuis `style.css`.
 - `vite.config.mjs` : Vite + `vite-plugin-singlefile` → un seul fichier `dist/carnet.html` (images et données incluses), copié dans `docs/index.html` (GitHub Pages). Jeu choisi par la variable `JEU` (défaut `dqm3`).
 - Node n'est pas installé : tout passe par Deno (`deno install`, `deno task dev`, `deno task build`, `deno run -A tests/t5.js`). Chromium Playwright : `deno run -A npm:playwright install chromium`. Si un test échoue avec « Descripteur non valide (os error 6) », c'est le lancement du navigateur par Deno : relancer.
-- Git : dépôt relié à https://github.com/romusan495/Monstrodex-Dragonquestmonster (branche `main`). Git est dans `C:\Program Files\Git\cmd` (pas forcément dans le PATH d'une session déjà ouverte). GitHub Pages sert `main` / `/docs` (https://romusan495.github.io/Monstrodex-Dragonquestmonster/) : `deno task build` puis commit + push de `docs/index.html` met le site à jour.
+- Git : dépôt relié à https://github.com/romusan495/antre-de-romusan (branche `main`, ancien nom Monstrodex-Dragonquestmonster). Git est dans `C:\Program Files\Git\cmd` (pas forcément dans le PATH d'une session déjà ouverte). GitHub Pages sert `main` / `/docs` (https://romusan495.github.io/antre-de-romusan/) : `deno task build` puis commit + push de `docs/index.html` met le site à jour.
 - `tools/bg_gen.py` + `tools/bg_render.js` : génèrent le fond en SVG puis en image.
 - `tests/*.js` : tests Playwright sur `dist/carnet.html` et `docs/index.html` (lancer le build avant).
 
@@ -26,5 +26,5 @@ Projet de Romuald (francophone). Le site regroupe, par jeu, les astuces et outil
 - Animations CSS désactivées si `prefers-reduced-motion`.
 
 ## Prévu
-- Générer des fonds illustrés avec FLUX.1 schnell (ComfyUI dans `J:\Outil\IA\ComfyUI_windows_portable`) via le serveur MCP `comfyui-mcp`.
+- Fonds FLUX.1 schnell : ComfyUI dans `J:\Outil\IA\ComfyUI_windows_portable` (lancer `python_embeded\python.exe -s ComfyUI\main.py --windows-standalone-build`), puis `deno run -A tools/flux_gen.ts <prompts.json> <dossier>`. Modèle chargé en fp8 (16 Go de VRAM). Pas de personnages ni de logos officiels dans les prompts.
 - Ajouter d'autres jeux : un dossier `src/<jeu>/` par jeu, avec son thème et son fond.
