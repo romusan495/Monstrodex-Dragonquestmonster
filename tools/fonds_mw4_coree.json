@@ -1,0 +1,8 @@
+[
+  { "nom": "seoul-nuit", "seeds": [301, 302],
+    "prompt": "Wide cinematic digital painting of modern warfare in a dense South Korean megacity at night: rain-soaked boulevard between glass skyscrapers and apartment towers, glowing neon shop signs without readable letters, a distant hilltop broadcast tower, smoke columns lit by orange fires, helicopters with searchlights, tracer fire across a dark teal sky, a silhouetted armored vehicle on the wet asphalt, gritty realistic style, dark lower half for text overlay. No readable text, no letters, no logo, no flags, no insignia, no faces." },
+  { "nom": "zone-demilitarisee", "seeds": [311, 312],
+    "prompt": "Wide cinematic digital painting of a militarized border zone in Korea at dusk: double barbed wire fences and concrete watchtowers along forested green mountains, river mist, searchlight beams, distant smoke and flares in a deep orange and slate blue sky, military trucks on a dirt road, tense realistic atmosphere, dark foreground for text overlay. No readable text, no letters, no logo, no flags, no insignia, no faces." },
+  { "nom": "palais-fumee", "seeds": [321, 322],
+    "prompt": "Wide cinematic digital painting of a traditional Korean palace with curved tiled hanok roofs and painted wooden eaves in the foreground, a modern city skyline burning behind it at night, smoke and embers drifting, helicopters overhead, contrast between ancient architecture and modern warfare, teal and orange palette, realistic painterly style, dark lower half for text overlay. No readable text, no letters, no logo, no flags, no insignia, no faces." }
+]

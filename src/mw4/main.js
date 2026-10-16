@@ -19,6 +19,10 @@ document.querySelector(".tabs").addEventListener("click", function(e){
   });
 });
 
+/* bandeau bêta : affiché jusqu'à la sortie officielle (23 octobre 2026, heure de Paris) */
+var SORTIE = Date.parse("2026-10-23T00:00:00+02:00");
+$("beta").hidden = Date.now() >= SORTIE;
+
 /* armes triées par tier puis par rang */
 var armes = C.armes.slice().sort(function(a, b){ return TIERS.indexOf(a.tier) - TIERS.indexOf(b.tier) || a.rang - b.rang; });
 $("maj").textContent = date(C.maj);

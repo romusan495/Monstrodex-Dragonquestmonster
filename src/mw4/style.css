@@ -19,7 +19,7 @@ a{color:var(--accent)}
 
 /* fond */
 .bg{position:fixed;inset:0;z-index:0;pointer-events:none;background:var(--bg)}
-.bg .bgi{position:absolute;inset:0;background:var(--bg) url(../../assets/mw4/scene.webp) center/cover no-repeat}
+.bg .bgi{position:absolute;inset:0;background:var(--bg) url(../../assets/mw4/scene.webp) center 30%/cover no-repeat}
 .bg .bgv{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%,rgba(6,8,12,.15) 30%,rgba(6,8,12,.7) 100%),linear-gradient(180deg,rgba(6,8,12,0) 45%,rgba(6,8,12,.75) 100%)}
 
 /* en-tête commun au site */
@@ -37,6 +37,9 @@ a{color:var(--accent)}
 .h-jeu{font-size:clamp(2.1rem,7vw,4rem);line-height:1;font-weight:700;letter-spacing:.02em;
   background:linear-gradient(180deg,#ffffff 0%,#dbe3ec 55%,#9aa7b6 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .intro{margin:0;max-width:70ch;background:var(--glass);border:1px solid var(--edge);border-radius:12px;padding:10px 14px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+
+.beta{margin:0;max-width:70ch;border:1px solid var(--accent);background:rgba(255,138,31,.14);border-radius:12px;padding:8px 14px;font-size:.9rem;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.beta b{color:var(--accent)}
 
 /* onglets */
 .tabs{display:flex;flex-wrap:wrap;gap:4px;margin:6px 0 16px;background:var(--glass);border:1px solid var(--edge);border-radius:12px;padding:4px;width:max-content;max-width:100%;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
