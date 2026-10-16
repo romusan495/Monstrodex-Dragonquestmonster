@@ -1,0 +1,14 @@
+[
+  { "nom": "chateau-lune", "seeds": [11, 12],
+    "prompt": "Wide cinematic fantasy landscape at night, painterly digital illustration. A dark gothic castle with tall pointed spires on a rocky cliff on the right, a huge glowing crimson moon behind it, swirling violet clouds, starry deep indigo sky, layers of misty purple mountains, silhouetted pine forest at the bottom, warm lit windows. Dark and calm lower half, rich colors, no characters, no text." },
+  { "nom": "foret-lucioles", "seeds": [21, 22],
+    "prompt": "Wide cinematic fantasy illustration of an enchanted forest at night, giant twisted ancient trees, glowing blue and teal mushrooms, hundreds of golden fireflies, soft moonlight beams through the canopy, mist on the ground, deep blue and violet palette, painterly style, dark lower edge, no characters, no text." },
+  { "nom": "ruines-celestes", "seeds": [31, 32],
+    "prompt": "Wide cinematic fantasy landscape, floating stone ruins and broken arches above a sea of clouds at night, a pale full moon, green and violet aurora across a starry sky, distant floating islands with waterfalls, painterly illustration, deep navy palette, dark bottom area, no characters, no text." },
+  { "nom": "volcan-braises", "seeds": [41, 42],
+    "prompt": "Wide cinematic dark fantasy landscape at night, a distant volcano with glowing lava rivers, orange embers floating in the air, black jagged rocks, a demonic fortress silhouette on the horizon, smoky purple and red sky, painterly illustration, dark lower half, no characters, no text." },
+  { "nom": "lac-miroir", "seeds": [51, 52],
+    "prompt": "Wide cinematic fantasy landscape at night, a calm mirror lake reflecting a giant moon and stars, snowy mountain peaks, a small medieval village with warm lights on the shore, a slender wizard tower, violet and deep blue palette, painterly illustration, dark foreground, no characters, no text." },
+  { "nom": "colisee-monstres", "seeds": [61, 62],
+    "prompt": "Wide cinematic fantasy landscape at dusk, a grand ancient stone arena colosseum on a hill, banners and torches, a dramatic purple and gold sunset sky with towering clouds, a winding road through green hills, painterly illustration, darker bottom area, no characters, no text." }
+]
