@@ -1,0 +1,15 @@
+const FILE=require('url').pathToFileURL(require('path').resolve('dist/carnet.html')).href;
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch({});
+const p=await b.newPage({viewport:{width:1100,height:1000}});const e=[];p.on('pageerror',x=>e.push(x.message));
+await p.goto(FILE);await p.waitForTimeout(600);
+await p.click('#tab-tal');await p.waitForTimeout(300);
+console.log(await p.textContent('#tl-count'));
+await p.fill('#tlq','typhon');await p.waitForTimeout(400);
+await p.click('[data-tl]');await p.waitForTimeout(200);
+console.log((await p.textContent('#tl-body')).slice(0,400));
+await p.screenshot({path:'dist/shot_tal.png'});
+await p.fill('#tlq','');await p.waitForTimeout(300);await p.screenshot({path:'dist/shot_tal2.png'});
+await p.click('#tl-body .par');await p.waitForTimeout(300);
+console.log('go ->',await p.inputValue('#q'),await p.getAttribute('#view-carnet','hidden'));
+console.log(e);await b.close();})();

@@ -1,0 +1,13 @@
+const FILE=require('url').pathToFileURL(require('path').resolve('dist/carnet.html')).href;
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch({});
+const p=await b.newPage({viewport:{width:1100,height:1000}});const e=[];p.on('pageerror',x=>e.push(x.message));
+await p.goto(FILE);await p.waitForTimeout(600);
+const an=async s=>p.evaluate(s=>{const x=document.querySelector(s);return x?getComputedStyle(x).animationName:'none?'},s);
+await p.click('#tab-syn');console.log('view-syn',await an('#view-syn'));
+await p.click('[data-mode=plan]');await p.fill('#pt','Mortamor');await p.waitForTimeout(100);console.log('plrec',await an('.plrec'));
+await p.click('#tab-tips');console.log('tip',await an('.tip'));
+await p.click('#tab-syn');await p.click('[data-mode=ult]');await p.fill('#ut','Mortamor');await p.fill('#ut1','Bonus de PV IV');await p.waitForFunction(()=>/au total/.test(document.getElementById('ult-out').textContent));console.log('uth',await an('#ult-out .uth'));
+const ctx=await b.newContext({reducedMotion:'reduce',viewport:{width:1100,height:1000}});const q=await ctx.newPage();
+await q.goto(FILE);await q.waitForTimeout(500);await q.click('#tab-syn');console.log('reduced',await q.evaluate(()=>getComputedStyle(document.getElementById('view-syn')).animationName));
+console.log(e);await b.close();})();

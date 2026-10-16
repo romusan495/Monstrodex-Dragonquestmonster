@@ -1,0 +1,27 @@
+const FILE=require('url').pathToFileURL(require('path').resolve('dist/carnet.html')).href;
+const {chromium}=require('playwright');
+(async()=>{const b=await chromium.launch({});
+const p=await b.newPage({viewport:{width:1100,height:900}});const e=[];p.on('pageerror',x=>e.push(x.message));
+await p.goto(FILE);await p.waitForTimeout(600);
+await p.click('#tab-syn');
+await p.fill('#pa','Machine à tuer');await p.fill('#pb','Bambouligan');await p.waitForTimeout(300);
+console.log('do btns',await p.locator('#fuse-out .do').count(),'own btns',await p.locator('#fuse-out .ownbtn').count());
+// own both parents via ownBtn? use carnet instead: tick via hint chips not possible; go through list
+await p.click('#tab-carnet');await p.fill('#q','Machine à tuer');await p.waitForTimeout(300);
+await p.locator('.mon .mk.o input').first().check({force:true});
+await p.fill('#q','Bambouligan');await p.waitForTimeout(300);
+await p.locator('.mon .mk.o input').first().check({force:true});
+console.log('own',await p.textContent('#n-own'));
+await p.click('#tab-syn');await p.waitForTimeout(300);
+await p.locator('#fuse-out .do').first().click();await p.waitForTimeout(300);
+console.log('after fusion',await p.textContent('#n-own'),await p.textContent('#toast'));
+await p.locator('#toast [data-undo]').click();await p.waitForTimeout(200);
+console.log('after undo',await p.textContent('#n-own'),await p.locator('#toast').isHidden());
+await p.click('[data-mode=plan]');await p.fill('#pt','A3G15');await p.waitForTimeout(300);
+console.log('count',await p.textContent('#plan-count'));
+await p.click('#tab-tips');await p.waitForTimeout(300);
+console.log('tips',await p.locator('.tip').count(),(await p.locator('#tips-body').innerText()).slice(0,60));
+console.log('mref',await p.locator('.mref').allTextContents().then(a=>a.join(' | ')));
+await p.screenshot({path:'dist/f1.png'});
+await p.setViewportSize({width:390,height:800});await p.screenshot({path:'dist/f2.png'});
+console.log(e);await b.close();})();
