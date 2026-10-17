@@ -1,0 +1,19 @@
+{
+  "jeu": "Supermarket Simulator",
+  "sources": [
+    { "titre": "Succès sur Steam", "url": "https://steamcommunity.com/stats/2670630/achievements" }
+  ],
+  "note": "Jeu de gestion sans histoire : aucun succès ne se rate, tout se fait dans une même partie en avançant dans les niveaux du magasin.",
+  "sansEtapes": true,
+  "sauvegarde": { "lisible": true, "chemin": "%USERPROFILE%\\AppData\\LocalLow\\Nokta Games\\Supermarket Simulator\\*.es3", "note": "Format Easy Save 3 en JSON non chiffré (bloc « Progression » en tête)." },
+  "sections": [],
+  "succes": {
+    "PURCHASED_ALL_SECTIONS": { "conseil": "Tous les agrandissements : les derniers demandent un niveau de magasin élevé et beaucoup d'argent.", "aConfirmer": true },
+    "HIRE_CASHIER": { "conseil": "Il faut assez de caisses et le niveau de magasin qui débloque 4 caissiers.", "aConfirmer": true },
+    "HIRE_RESTOCKER": { "conseil": "Le nombre de réassortisseurs se débloque avec le niveau du magasin.", "aConfirmer": true },
+    "DOOR_POSITION": { "conseil": "Se change dans les options de personnalisation du magasin, une fois l'agrandissement voulu acheté.", "aConfirmer": true },
+    "CATEGORY_SIGN": { "conseil": "Panneaux de catégorie à acheter puis à poser au-dessus des rayons.", "aConfirmer": true },
+    "PAY_LOAN": { "conseil": "Emprunte la plus petite somme puis rembourse-la aussitôt : les deux succès d'un coup." },
+    "TAKE_LOAN": { "conseil": "Voir « Finally »." }
+  }
+}

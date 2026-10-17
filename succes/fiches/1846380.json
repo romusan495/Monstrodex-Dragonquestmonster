@@ -1,0 +1,46 @@
+{
+  "jeu": "Need for Speed Unbound",
+  "sources": [
+    { "titre": "Platget, guide des trophées (en anglais)", "url": "https://platget.com/guides/need-for-speed-unbound-trophy-guide/" },
+    { "titre": "PowerPyx, emplacements des panneaux (en anglais)", "url": "https://www.powerpyx.com/need-for-speed-unbound-all-billboard-locations" },
+    { "titre": "TrueAchievements, Envole-moi (en anglais)", "url": "https://www.trueachievements.com/a378045/frequent-flyer-achievement" },
+    { "titre": "Succès sur Steam", "url": "https://steamcommunity.com/stats/1846380/achievements" }
+  ],
+  "note": "Aucun succès ne se rate : collectors et activités restent disponibles après l'histoire, et leur progression est commune au mode Histoire et au mode en ligne. Une partie suffit, plus le mode Lakeshore en ligne pour une dizaine de succès.",
+  "sauvegarde": { "lisible": false, "chemin": "Documents\\Need For Speed(TM) Unbound\\SaveGame\\savegame", "note": "Fichier binaire (en-tête NFSS) non documenté : position déduite des succès d'histoire." },
+  "sections": [
+    { "id": "prologue", "nom": "Prologue" },
+    { "id": "s1", "nom": "Semaine 1", "atteinte": "Achievement_GOSCC_7" },
+    { "id": "s2", "nom": "Semaine 2", "atteinte": "Achievement_GOSCC_3" },
+    { "id": "s3", "nom": "Semaine 3", "atteinte": "Achievement_GOSCC_4" },
+    { "id": "s4", "nom": "Semaine 4", "atteinte": "Achievement_GOSCC_5" },
+    { "id": "fin", "nom": "Après l'histoire", "atteinte": "Achievement_GOSCC_6" }
+  ],
+  "succes": {
+    "Achievement_GOSCC_7": { "depuis": "prologue", "conseil": "Histoire, automatique." },
+    "Achievement_GOSCC_3": { "depuis": "s1", "conseil": "Histoire : fin de la première semaine." },
+    "Achievement_GOSCC_4": { "depuis": "s2", "conseil": "Histoire : fin de la deuxième semaine." },
+    "Achievement_GOSCC_5": { "depuis": "s3", "conseil": "Histoire : fin de la troisième semaine." },
+    "Achievement_GOSCC_6": { "depuis": "s4", "conseil": "Course finale de l'histoire." },
+    "Achievement_GOSCC_1": { "depuis": "s1", "conseil": "Collectors visibles sur la carte une fois la zone découverte ; faisable aussi après l'histoire." },
+    "Achievement_GOSCC_8": { "depuis": "s1", "conseil": "Faisable après l'histoire ; progression partagée avec le mode en ligne.", "lien": "https://www.powerpyx.com/need-for-speed-unbound-all-billboard-locations" },
+    "Achievement_GOSCC_9": { "depuis": "s1", "conseil": "Faisable après l'histoire ; progression partagée avec le mode en ligne." },
+    "Achievement_GOSCC_10": { "depuis": "s1", "conseil": "Garde-les pour la fin, avec une voiture de classe élevée." },
+    "Achievement_GOSCC_11": { "depuis": "s1", "conseil": "Pneus tout-terrain et voiture rapide ; un joueur signale un succès qui ne s'est pas débloqué malgré 3 étoiles partout.", "aConfirmer": true },
+    "Achievement_GOSCC_12": { "depuis": "s1", "conseil": "Voiture réglée pour le drift, en fin de partie." },
+    "Achievement_GOSCC_13": { "depuis": "s1", "conseil": "Voiture de classe S+ conseillée pour les radars les plus exigeants." },
+    "Achievement_GOSCC_14": { "depuis": "s1", "conseil": "Tous les collectors et 3 étoiles partout : à faire après l'histoire." },
+    "Achievement_GOSCC_2": { "conseil": "Monte l'alerte en roulant de nuit et en enchaînant les infractions, puis sème la police." },
+    "Achievement_GOSCC_22": { "conseil": "Même chose avec une voiture de classe A+ ou plus : fais les deux d'un coup." },
+    "Achievement_GOSCC_25": { "conseil": "Mode Lakeshore en ligne." },
+    "Achievement_GOSCC_26": { "conseil": "Mode Lakeshore en ligne : une playlist avec 7 autres pilotes." },
+    "Achievement_GOSCC_27": { "conseil": "Mode Lakeshore en ligne." },
+    "Achievement_GOSCC_28": { "conseil": "Mode Lakeshore en ligne." },
+    "Achievement_GOSCC_29": { "conseil": "Mode Lakeshore en ligne." },
+    "Achievement_GOSCC_30": { "conseil": "Mode Lakeshore en ligne." },
+    "Achievement_GOSCC_31": { "conseil": "Mode Lakeshore en ligne." },
+    "Achievement_GOSCC_32": { "conseil": "Mode Lakeshore en ligne : 25 playlists, simplement terminées." },
+    "Achievement_GOSCC_34": { "conseil": "Mode Lakeshore en ligne." },
+    "Achievement_GOSCC_40": { "conseil": "Mode Lakeshore en ligne." }
+  }
+}
