@@ -7,6 +7,7 @@ export const PAGE = /* html */ `<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${TITRE}</title>
+<link rel="icon" type="image/png" href="/icone.png">
 <style>
 :root {
   --fond: #12141a; --carte: #1b1f28; --carte2: #222734; --bord: #2c3242;
@@ -39,7 +40,6 @@ main { padding: 8px 12px 16px; display: grid; gap: 6px; }
 .meta { display: flex; gap: 8px; flex-wrap: wrap; font-size: 11px; color: var(--doux); margin-top: 3px; }
 .rare { color: var(--accent); }
 .s .barre { margin-top: 4px; height: 4px; }
-.voile { cursor: pointer; font-style: italic; }
 .vide { color: var(--doux); text-align: center; padding: 24px 8px; }
 #scan { font-size: 12px; color: var(--doux); margin: 2px 0 4px; }
 #scan button { padding: 1px 6px; font-size: 12px; }
@@ -85,15 +85,14 @@ h2.doux { color: var(--doux); }
     <button data-f="afaire" aria-pressed="true">À faire</button>
     <button data-f="faits" aria-pressed="false">Faits</button>
     <button data-f="tous" aria-pressed="false">Tous</button>
-    <button id="caches" aria-pressed="false" title="Afficher la description des succès cachés">Révéler les cachés</button>
   </div>
 </header>
 <main id="liste"></main>
 <script>
 const $ = (id) => document.getElementById(id);
 const memo = (k, v) => { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch {} };
-let filtre = memo("filtre") || "afaire", revele = memo("caches") === "1", choix = "auto";
-const vus = new Set(), devoiles = new Set();
+// Les succès cachés sont toujours affichés en clair (choix de Romuald).
+let filtre = memo("filtre") || "afaire", choix = "auto";
 let dernier = null, appidAffiche = null, faitsAvant = null;
 
 const echap = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -101,33 +100,27 @@ const dateFr = (t) => new Date(t * 1000).toLocaleDateString("fr-FR", { day: "num
 
 function majBoutons() {
   for (const b of document.querySelectorAll("[data-f]")) b.setAttribute("aria-pressed", b.dataset.f === filtre);
-  $("caches").setAttribute("aria-pressed", revele);
 }
 
-// Nom d'une étape, sans divulgâcher : celui d'un succès caché pas encore obtenu reste masqué.
 function nomEtape(sec, i, j) {
   if (sec.nom) return sec.nom;
   const ids = [sec.atteinte ?? []].flat();
   const s = j.succes.find((x) => x.id === ids[0]);
-  if (!s) return "Étape " + (i + 1);
-  return s.cache && !s.fait && !revele ? "Étape " + (i + 1) + " (cachée)" : "Après « " + s.nom + " »";
+  return s ? "Après « " + s.nom + " »" : "Étape " + (i + 1);
 }
 
 function carte(s, nouveaux, info, extra) {
-  const voile = s.cache && !s.fait && !revele && !devoiles.has(s.id);
   const meta = [];
   if (extra) meta.push('<span class="' + extra.cls + '">' + echap(extra.txt) + "</span>");
   if (s.rarete != null) meta.push('<span class="' + (s.rarete < 10 ? "rare" : "") + '">' + s.rarete.toFixed(1).replace(".", ",") + " % des joueurs</span>");
   if (s.cache) meta.push("<span>caché</span>");
   if (s.fait && s.date) meta.push("<span>obtenu le " + dateFr(s.date) + "</span>");
   if (s.progres && !s.fait) meta.push("<span>" + Math.floor(s.progres.val) + " / " + s.progres.max + "</span>");
-  if (info?.aConfirmer && !voile) meta.push('<span class="aconf">à confirmer</span>');
+  if (info?.aConfirmer) meta.push('<span class="aconf">à confirmer</span>');
   return '<article class="s' + (s.fait ? " fait" : "") + (nouveaux.has(s.id) ? " nouveau" : "") + '">'
     + '<img alt="" loading="lazy" src="' + echap(s.fait ? s.icone : s.iconeGrise) + '">'
-    + "<div>" + (voile
-      ? '<div class="nom voile" data-id="' + echap(s.id) + '" title="Cliquer pour révéler">Succès caché</div><div class="desc voile" data-id="' + echap(s.id) + '">Cliquer pour révéler</div>'
-      : '<div class="nom">' + echap(s.nom) + '</div><div class="desc">' + echap(s.desc || "—") + "</div>"
-        + (info?.conseil ? '<div class="conseil">' + echap(info.conseil) + (info.lien ? ' <a href="' + echap(info.lien) + '" target="_blank" rel="noopener">Voir</a>' : "") + "</div>" : ""))
+    + '<div><div class="nom">' + echap(s.nom) + '</div><div class="desc">' + echap(s.desc || "—") + "</div>"
+    + (info?.conseil ? '<div class="conseil">' + echap(info.conseil) + (info.lien ? ' <a href="' + echap(info.lien) + '" target="_blank" rel="noopener">Voir</a>' : "") + "</div>" : "")
     + (s.progres && !s.fait ? '<div class="barre"><i style="width:' + (100 * s.progres.val / s.progres.max) + '%"></i></div>' : "")
     + '<div class="meta">' + meta.join("") + "</div></div></article>";
 }
@@ -178,10 +171,9 @@ function afficher() {
   if (filtre !== "afaire") { $("liste").innerHTML = l.map((s) => carte(s, nouveaux, info(s))).join(""); return; }
 
   // Repérés à l'écran : en tête, quoi qu'il arrive (le mot n'est pas montré pour un succès caché).
-  const voileDe = (s) => s.cache && !revele && !devoiles.has(s.id);
   const repere = l.filter((s) => ec.reperes[s.id]);
   l = l.filter((s) => !ec.reperes[s.id]);
-  const htmlRepere = bloc("Repéré à l'écran", repere.map((s) => carte(s, nouveaux, info(s), { cls: "vu", txt: voileDe(s) ? "vu à l'écran" : "vu : " + ec.reperes[s.id] })), "vu");
+  const htmlRepere = bloc("Repéré à l'écran", repere.map((s) => carte(s, nouveaux, info(s), { cls: "vu", txt: "vu : " + ec.reperes[s.id] })), "vu");
   if (!f) { $("liste").innerHTML = htmlRepere + bloc(repere.length ? "Les autres" : "À faire", l.map((s) => carte(s, nouveaux, info(s))), repere.length ? "doux" : ""); return; }
 
   // Avec une fiche : regroupement selon l'étape où tu en es.
@@ -252,8 +244,6 @@ $("scanmaint").onclick = () => { reglerScan("maintenant=1"); setTimeout(rafraich
 $("scanecran").onchange = () => { reglerScan("ecran=" + encodeURIComponent($("scanecran").value) + "&maintenant=1"); $("scanecran").blur(); };
 $("jeu").onchange = () => { choix = $("jeu").value; appidAffiche = null; rafraichir(); };
 for (const b of document.querySelectorAll("[data-f]")) b.onclick = () => { filtre = b.dataset.f; memo("filtre", filtre); majBoutons(); afficher(); };
-$("caches").onclick = () => { revele = !revele; memo("caches", revele ? "1" : "0"); majBoutons(); afficher(); };
-$("liste").onclick = (ev) => { const id = ev.target.closest(".voile")?.dataset.id; if (id) { devoiles.add(id); afficher(); } };
 $("epingle").onclick = async () => {
   const oui = $("epingle").getAttribute("aria-pressed") !== "true";
   const r = await (await fetch("/api/epingler?oui=" + (oui ? 1 : 0), { method: "POST" })).json();

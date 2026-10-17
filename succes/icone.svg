@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="fond" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a3142"/>
+      <stop offset="1" stop-color="#12141a"/>
+    </linearGradient>
+    <linearGradient id="or" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe08a"/>
+      <stop offset=".55" stop-color="#e3b341"/>
+      <stop offset="1" stop-color="#b07a12"/>
+    </linearGradient>
+    <linearGradient id="vise" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9fd4ff"/>
+      <stop offset="1" stop-color="#3d8fe0"/>
+    </linearGradient>
+  </defs>
+  <!-- Fond -->
+  <rect x="8" y="8" width="240" height="240" rx="52" fill="url(#fond)"/>
+  <rect x="8" y="8" width="240" height="240" rx="52" fill="none" stroke="#e3b341" stroke-opacity=".55" stroke-width="6"/>
+  <!-- Coupe -->
+  <path d="M70 52h116v18c0 44-24 74-58 78-34-4-58-34-58-78z" fill="url(#or)"/>
+  <path d="M70 66H46c0 34 16 54 40 58l4-14c-16-4-26-18-28-32h10zM186 66h24c0 34-16 54-40 58l-4-14c16-4 26-18 28-32h-10z" fill="url(#or)"/>
+  <rect x="116" y="146" width="24" height="30" fill="#c98f1c"/>
+  <path d="M88 186h80l10 24H78z" fill="url(#or)"/>
+  <!-- Étoile -->
+  <path d="M128 70l9.4 19 21 3-15.2 14.8 3.6 20.9L128 117.8l-18.8 9.9 3.6-20.9L97.6 92l21-3z" fill="#fff6d6"/>
+  <!-- Viseur (le scan de l'écran) -->
+  <circle cx="196" cy="196" r="30" fill="#12141a" stroke="url(#vise)" stroke-width="9"/>
+  <circle cx="196" cy="196" r="9" fill="url(#vise)"/>
+</svg>

@@ -64,6 +64,8 @@ async function repondre(req: Request): Promise<Response> {
   switch (url.pathname) {
     case "/":
       return new Response(PAGE, { headers: { "content-type": "text/html; charset=utf-8" } });
+    case "/icone.png": // icône de la fenêtre (barre des tâches)
+      return new Response(Deno.readFileSync(`${import.meta.dirname}/icone-256.png`), { headers: { "content-type": "image/png", "cache-control": "max-age=86400" } });
     case "/api/jeux":
       return json(await jeux());
     case "/api/etat": {
