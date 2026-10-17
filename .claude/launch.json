@@ -12,6 +12,12 @@
       "runtimeExecutable": "deno",
       "runtimeArgs": ["task", "dev:mw4", "--port", "5174", "--strictPort"],
       "port": 5174
+    },
+    {
+      "name": "succes",
+      "runtimeExecutable": "deno",
+      "runtimeArgs": ["run", "-A", "succes/main.ts", "--sans-fenetre"],
+      "port": 47815
     }
   ]
 }
