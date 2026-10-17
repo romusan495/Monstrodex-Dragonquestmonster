@@ -1,0 +1,49 @@
+{
+  "jeu": "Dishonored : La Mort de l'Outsider",
+  "sources": [
+    { "titre": "PowerPyx, guide des trophées (en anglais)", "url": "https://powerpyx.com/dishonored-death-of-the-outsider-trophy-guide-roadmap" },
+    { "titre": "Succès sur Steam", "url": "https://steamcommunity.com/stats/614570/achievements" }
+  ],
+  "note": "Les missions se rejouent par la sélection de mission : seuls Ombre, Amateur d'art et Mercenaire se ratent (ils comptent sur une même partie). Difficulté sans effet sur les succès.",
+  "sauvegarde": { "lisible": false, "note": "Non examinée : position déduite des succès d'histoire." },
+  "sections": [
+    { "id": "m1", "nom": "Mission 1 (arène, cage de Daud)" },
+    { "id": "m2", "nom": "Mission 2 (maison de Shan Yun, Colibron Plaza)", "atteinte": "ACH_1" },
+    { "id": "m3", "nom": "Mission 3 (la banque)", "atteinte": "ACH_2" },
+    { "id": "m4", "nom": "Mission 4 (Conservatoire royal)", "atteinte": "ACH_3" },
+    { "id": "m5", "nom": "Mission 5 (dernière mission)", "atteinte": "ACH_4" },
+    { "id": "fin", "nom": "Après la fin du jeu", "atteinte": ["ACH_6", "ACH_7"] }
+  ],
+  "succes": {
+    "ACH_1": { "depuis": "m1", "conseil": "Histoire, automatique." },
+    "ACH_23": { "depuis": "m1" },
+    "ACH_27": { "depuis": "m1" },
+    "ACH_2": { "depuis": "m2", "conseil": "Histoire, automatique." },
+    "ACH_8": { "depuis": "m2" },
+    "ACH_9": { "depuis": "m2" },
+    "ACH_10": { "depuis": "m2" },
+    "ACH_19": { "depuis": "m2" },
+    "ACH_20": { "depuis": "m2", "conseil": "Faisable aussi dans les missions 3 et 4." },
+    "ACH_21": { "depuis": "m2" },
+    "ACH_28": { "depuis": "m2", "conseil": "Tombe souvent en même temps que « Planification ingénieuse »." },
+    "ACH_22": { "depuis": "m2", "conseil": "Le salut d'un garde est aléatoire : déguise-toi et passe devant plusieurs gardes." },
+    "ACH_3": { "depuis": "m3", "conseil": "Histoire, automatique." },
+    "ACH_11": { "depuis": "m3" },
+    "ACH_12": { "depuis": "m3" },
+    "ACH_13": { "depuis": "m3", "conseil": "Sauvegarde avant d'entrer dans la chambre forte." },
+    "ACH_14": { "depuis": "m3" },
+    "ACH_4": { "depuis": "m4", "conseil": "Histoire, automatique." },
+    "ACH_15": { "depuis": "m4" },
+    "ACH_16": { "depuis": "m4" },
+    "ACH_18": { "depuis": "m4", "conseil": "Frappe du Vide s'obtient à la mission 3." },
+    "ACH_5": { "depuis": "m5", "conseil": "Histoire, automatique." },
+    "ACH_17": { "depuis": "m5" },
+    "ACH_6": { "depuis": "m5", "conseil": "Bonne fin : objectif facultatif à remplir avant d'atteindre l'Outsider. Sauvegarde à la main avant de lui parler." },
+    "ACH_7": { "depuis": "m5", "conseil": "Autre fin : recharge la sauvegarde faite avant la bonne fin." },
+    "ACH_25": { "depuis": "m1", "conseil": "N'importe quelle mission, sans tuer personne." },
+    "ACH_24": { "depuis": "m1", "conseil": "Toute la partie avec 0 détection à la fin de chaque mission : recharge dès que tu es repéré. Les alarmes et les corps découverts ne comptent pas." },
+    "ACH_30": { "depuis": "m1", "jusqua": "m3", "conseil": "8 tableaux, tous dans les missions 1 à 3, sur une même partie. À la mission 1, prends le tableau avant de libérer Daud." },
+    "ACH_29": { "depuis": "m1", "jusqua": "m4", "conseil": "13 contrats dans les missions 1 à 4, sur une même partie. Aucun à la mission 5." },
+    "ACH_26": { "depuis": "fin", "conseil": "Termine le mode « Partie originale + »." }
+  }
+}

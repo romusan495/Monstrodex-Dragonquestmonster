@@ -7,7 +7,7 @@
     "build": "JEU=accueil vite build && vite build && JEU=mw4 vite build",
     "dev:mw4": "JEU=mw4 vite",
     "succes": "deno run -A succes/main.ts",
-    "build:succes": "deno compile -A --no-terminal --no-npm --exclude node_modules --output dist/Succes-Steam.exe succes/main.ts",
+    "build:succes": "deno compile -A --no-terminal --no-npm --exclude node_modules --include succes/fiches --output dist/Succes-Steam.exe succes/main.ts",
     "test": "deno run -A tests/t5.js && deno run -A tests/t7.js && deno run -A tests/t9.js && deno run -A tests/t14.js && deno run -A tests/t21.js"
   },
   "devDependencies": {

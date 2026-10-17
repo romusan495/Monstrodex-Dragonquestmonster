@@ -3,7 +3,7 @@
 import { dossierDonnees, jeuLance, lireJeu, listerJeux } from "./steam.ts";
 import { HKLM, premierPlan, regTexte } from "./windows.ts";
 import { PAGE, TITRE } from "./page.ts";
-import { choisirPosition, fiche, positionAuto, positionManuelle } from "./fiches.ts";
+import { choisirPosition, fiche, mettreEnFile, positionAuto, positionManuelle } from "./fiches.ts";
 
 const PORT = 47815;
 const URL_PAGE = `http://127.0.0.1:${PORT}/`;
@@ -68,6 +68,7 @@ async function repondre(req: Request): Promise<Response> {
     case "/api/etat": {
       const lance = jeuLance();
       const jeuEnCours = lance ? await lireJeu(lance) : null;
+      if (jeuEnCours?.succes.length && !fiche(lance)) mettreEnFile(lance, jeuEnCours.nom);
       const demande = url.searchParams.get("appid") ?? "auto";
       let jeu = null;
       if (demande !== "auto") jeu = await lireJeu(+demande);

@@ -96,7 +96,8 @@ function majBoutons() {
 // Nom d'une étape, sans divulgâcher : celui d'un succès caché pas encore obtenu reste masqué.
 function nomEtape(sec, i, j) {
   if (sec.nom) return sec.nom;
-  const s = j.succes.find((x) => x.id === sec.atteinte);
+  const ids = [sec.atteinte ?? []].flat();
+  const s = j.succes.find((x) => x.id === ids[0]);
   if (!s) return "Étape " + (i + 1);
   return s.cache && !s.fait && !revele ? "Étape " + (i + 1) + " (cachée)" : "Après « " + s.nom + " »";
 }
@@ -148,9 +149,10 @@ function afficher() {
   if (appidAffiche === j.appid && faitsAvant) for (const s of j.succes) if (s.fait && !faitsAvant.has(s.id)) nouveaux.add(s.id);
   appidAffiche = j.appid; faitsAvant = new Set(j.succes.filter((s) => s.fait).map((s) => s.id));
 
-  const f = dernier.fiche, iPos = majEtapes(j, f, dernier.etape);
+  // Une fiche « sans étapes » garde ses conseils mais pas le regroupement par étape.
+  const f = dernier.fiche?.sections?.length ? dernier.fiche : null, iPos = majEtapes(j, f, dernier.etape);
   const idx = (id) => f ? f.sections.findIndex((x) => x.id === id) : -1;
-  const info = (s) => f?.succes[s.id];
+  const info = (s) => dernier.fiche?.succes?.[s.id];
 
   let l = j.succes.filter((s) => filtre === "tous" || (filtre === "faits") === s.fait);
   // Le plus avancé d'abord, puis le plus courant (souvent le plus facile).
@@ -161,18 +163,20 @@ function afficher() {
   if (!f || filtre !== "afaire") { $("liste").innerHTML = l.map((s) => carte(s, nouveaux, info(s))).join(""); return; }
 
   // Avec une fiche : regroupement selon l'étape où tu en es.
-  const groupes = { derniere: [], maintenant: [], plusTard: [], rates: [] };
+  const groupes = { derniere: [], ici: [], maintenant: [], plusTard: [], rates: [] };
   for (const s of l) {
     const i = info(s) ?? {}, d = i.depuis ? idx(i.depuis) : -1, fin = i.jusqua ? idx(i.jusqua) : Infinity;
     if (iPos > fin) groupes.rates.push(carte(s, nouveaux, i, { cls: "rate", txt: "raté après : " + nomEtape(f.sections[fin], fin, j) }));
     else if (d > iPos) groupes.plusTard.push({ d, html: carte(s, nouveaux, i, { cls: "", txt: "à partir de : " + nomEtape(f.sections[d], d, j) }) });
     else if (iPos === fin) groupes.derniere.push(carte(s, nouveaux, i, { cls: "rate", txt: "dernière chance avant l'étape suivante" }));
+    else if (d === iPos) groupes.ici.push(carte(s, nouveaux, i));
     else groupes.maintenant.push(carte(s, nouveaux, i));
   }
   groupes.plusTard.sort((a, b) => a.d - b.d);
   const bloc = (titre, cartes, cls) => cartes.length ? '<h2 class="' + (cls || "") + '">' + titre + " (" + cartes.length + ")</h2>" + cartes.join("") : "";
   $("liste").innerHTML = bloc("Dernière chance ici", groupes.derniere, "alerte")
-    + bloc("Faisables maintenant", groupes.maintenant)
+    + bloc("Dans cette étape", groupes.ici)
+    + bloc(groupes.ici.length ? "Faisables aussi" : "Faisables maintenant", groupes.maintenant)
     + bloc("Plus tard", groupes.plusTard.map((x) => x.html), "doux")
     + bloc("Ratés pour cette partie", groupes.rates, "doux")
     + (f.note || f.sources?.length ? '<p class="source">' + echap(f.note || "") + (f.sources || []).map((x) => ' <a href="' + echap(x.url) + '" target="_blank" rel="noopener">' + echap(x.titre) + "</a>").join(" ·") + "</p>" : "");
