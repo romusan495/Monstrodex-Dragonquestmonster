@@ -1,0 +1,30 @@
+{
+  "jeu": "Medieval Dynasty",
+  "sources": [
+    { "titre": "TrueAchievements, succès des 1 000 rondins (en anglais)", "url": "https://www.trueachievements.com/a390246/lumberjacked-achievement" },
+    { "titre": "TrueAchievements, succès de la quête principale (en anglais)", "url": "https://www.trueachievements.com/a340428/closure-achievement" },
+    { "titre": "Succès sur Steam", "url": "https://steamcommunity.com/stats/1129580/achievements" }
+  ],
+  "note": "Jeu de survie et de gestion sans étapes nettes. Plusieurs succès comptent « au cours d'une seule dynastie » : ils repartent à zéro avec une nouvelle partie. La quête principale ne se fait qu'en solo.",
+  "sansEtapes": true,
+  "sauvegarde": { "lisible": true, "chemin": "%LOCALAPPDATA%\\Medieval_Dynasty\\Saved\\SaveGames", "note": "Fichiers .sav au format Unreal Engine (GVAS), structure documentée et non chiffrée. Pas encore lue par le traqueur." },
+  "sections": [],
+  "succes": {
+    "ACH_MD_MISSIONIMPROBABLE": { "conseil": "Pendant la quête principale, quand on te demande 1 000 rondins : ne reparle pas à ce personnage avant de les avoir, sinon la demande est abandonnée. Fais-les couper par tes villageois et sauvegarde avant de rendre la quête." },
+    "ACH_MD_MAINQUEST": { "conseil": "Toute la quête principale, en solo seulement (pas en coop)." },
+    "ACH_MD_DYNASTYCONT": { "conseil": "Il faut un héritier en âge de prendre la relève : marie-toi et aie un enfant tôt.", "aConfirmer": true },
+    "ACH_MD_GIFTS": { "conseil": "Offre régulièrement des cadeaux à ton épouse pendant deux années de jeu sans interruption.", "aConfirmer": true },
+    "ACH_MD_REST": { "conseil": "Une année entière sans dormir ailleurs que dans ton lit : une seule nuit ratée remet le compte à zéro.", "aConfirmer": true },
+    "ACH_MD_WINTEREXPERT": { "conseil": "Un hiver entier sans vêtements : feu, nourriture chaude et abri. Sauvegarde souvent.", "aConfirmer": true },
+    "ACH_MD_HUNT": { "conseil": "Un animal de chaque espèce dans la même dynastie." },
+    "ACH_MD_EXPLORE": { "conseil": "Tous les villages dans la même dynastie." },
+    "ACH_MD_THIEF": { "conseil": "50 objets volés revendus dans la même dynastie." },
+    "ACH_MD_CAUGHTSTEAL50": { "conseil": "50 vols repérés dans la même dynastie : vole sous les yeux des habitants." },
+    "ACH_MD_ARCHER": { "conseil": "Cible de tir à l'arc : 100 points ou plus d'un coup, de loin.", "aConfirmer": true },
+    "ACH_MD_MINES": { "conseil": "Une mine dans chaque grotte de la carte." },
+    "ACH_MD_STATUSES": { "conseil": "Cumule nourriture, boissons et alcool pour empiler 12 effets en même temps.", "aConfirmer": true },
+    "ACH_MD_HEDGEHOG": { "conseil": "Plante 4 lances dans un gros animal sans le tuer : vise les pattes.", "aConfirmer": true },
+    "ACH_MD_DEBT": { "conseil": "Laisse l'impôt impayé plusieurs saisons ; sauvegarde avant.", "aConfirmer": true },
+    "ACH_MD_MONEY": { "conseil": "Long : vends la production de ton village." }
+  }
+}

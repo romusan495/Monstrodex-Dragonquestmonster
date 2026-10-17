@@ -1,0 +1,27 @@
+{
+  "jeu": "RollerCoaster Tycoon World",
+  "sources": [
+    { "titre": "Succès sur Steam", "url": "https://steamcommunity.com/stats/282560/achievements" },
+    { "titre": "Gamesplanet, liste des succès (en anglais)", "url": "https://us.gamesplanet.com/community/rollercoaster-tycoon-world-steam-key--2925-1/achievements" }
+  ],
+  "note": "Jeu de gestion sans histoire : aucun succès ne se rate. Le mode bac à sable aide pour les succès d'argent, de valeur du parc et d'accidents.",
+  "sansEtapes": true,
+  "sauvegarde": { "lisible": false, "chemin": "%USERPROFILE%\\AppData\\LocalLow\\Nvizzio Creations\\Rollercoaster Tycoon World\\Saves", "note": "Dossier vide en local (sauvegardes dans le cloud Steam) : non examinée." },
+  "sections": [],
+  "succes": {
+    "EASTER_EGG_01": { "conseil": "Clique sur des arbres où des oiseaux sont posés, dix fois.", "aConfirmer": true },
+    "EASTER_EGG_02": { "conseil": "Clique sur dix cocotiers : il faut une carte ou un décor tropical.", "aConfirmer": true },
+    "EASTER_EGG_03": { "conseil": "Fais passer un circuit ouvert au-dessus d'une allée fréquentée, sans le tester : le train finit dans la foule." },
+    "EASTER_EGG_05": { "conseil": "Même chose qu'« Strike! » sur une allée très encombrée, en bac à sable.", "aConfirmer": true },
+    "COASTER_14": { "conseil": "Construis un circuit qui s'arrête dans le vide et lance le test 30 fois." },
+    "COASTER_15": { "conseil": "Ouvre au public un circuit inachevé sans le tester, plusieurs fois.", "aConfirmer": true },
+    "BLUEPRINT_02": { "conseil": "Enregistre tes montagnes russes comme plan ; de petites variantes suffisent.", "aConfirmer": true },
+    "BLUEPRINT_03": { "conseil": "Comme « My Plan », 20 plans au total.", "aConfirmer": true },
+    "PARK_04": { "conseil": "Plus simple en bac à sable avec argent illimité.", "aConfirmer": true },
+    "PARK_05": { "conseil": "Plus simple en bac à sable avec argent illimité.", "aConfirmer": true },
+    "PROFIT_02": { "conseil": "Très long : bac à sable et vitesse maximale.", "aConfirmer": true },
+    "PEEP_05": { "conseil": "Cumulé : les accidents de « Peep Bowling » comptent.", "aConfirmer": true },
+    "PEEP_06": { "conseil": "Cumulé : un grand parc aux allées en impasse perd beaucoup de visiteurs.", "aConfirmer": true },
+    "BANKRUPTCY_01": { "conseil": "En scénario ou carrière, laisse filer l'argent jusqu'à la faillite.", "aConfirmer": true }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "jeu": "Aniimo",
+  "sources": [
+    { "titre": "Allthings.how, les 64 succès (en anglais)", "url": "https://allthings.how/aniimo-how-to-get-all-64-achievements/" },
+    { "titre": "Succès sur Steam", "url": "https://steamcommunity.com/stats/4126040/achievements" }
+  ],
+  "note": "Monde ouvert en ligne : pas d'étapes d'histoire nettes. Cinq succès demandent un ami, et le badge limité « Starbound Journey » est peut-être lié à une période.",
+  "sansEtapes": true,
+  "sauvegarde": { "lisible": false, "note": "Jeu en ligne : la progression est sur les serveurs, rien de lisible en local." },
+  "sections": [],
+  "succes": {
+    "NEW_ACHIEVEMENT_3": { "conseil": "Badge limité : récupère-le tôt dans le menu des badges, il pourrait disparaître.", "aConfirmer": true },
+    "NEW_ACHIEVEMENT_14": { "conseil": "200 coffres : long. Ouvre ceux que tu croises en explorant, puis finis avec une carte." },
+    "NEW_ACHIEVEMENT_19": { "conseil": "Niveau 60 : long à monter, se fait avec le temps." },
+    "NEW_ACHIEVEMENT_36": { "conseil": "Aniilog de Breezy Plains au niveau 9 : enregistre et capture beaucoup d'Aniimo de la région." },
+    "NEW_ACHIEVEMENT_29": { "conseil": "Il faut un Aniimo à la fois scintillant et Prismana : rare, c'est de la chance." },
+    "NEW_ACHIEVEMENT_41": { "conseil": "50 Pathfinder Challenges : long." },
+    "NEW_ACHIEVEMENT_43": { "conseil": "Holo-Battle Sim en difficulté maximale : prépare une équipe forte contre le type choisi." },
+    "NEW_ACHIEVEMENT_45": { "conseil": "Operation: Egg Heist en équipe, difficulté Nightmare : plus simple avec des amis." },
+    "NEW_ACHIEVEMENT_49": { "conseil": "50 étoiles en Holo-Battle Interlink.", "aConfirmer": true },
+    "NEW_ACHIEVEMENT_50": { "conseil": "Six badges de victoire contre des Elite Pathfinders.", "aConfirmer": true },
+    "NEW_ACHIEVEMENT_58": { "conseil": "Rangé parmi les succès sociaux : joue de la flûte et rencontre ton premier Pathfinder.", "aConfirmer": true },
+    "NEW_ACHIEVEMENT_59": { "conseil": "Demande un ami : lien de niveau 5 avec lui." },
+    "NEW_ACHIEVEMENT_60": { "conseil": "Demande un ami : offre-lui un Aniimo en Companion Mode." },
+    "NEW_ACHIEVEMENT_61": { "conseil": "Demande un ami : un échange d'Aniimo." },
+    "NEW_ACHIEVEMENT_62": { "conseil": "Demande un ami : une photo ensemble au Photo Studio." },
+    "NEW_ACHIEVEMENT_64": { "conseil": "Ajoute un ami en jeu." }
+  }
+}

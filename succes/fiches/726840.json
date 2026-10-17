@@ -1,0 +1,32 @@
+{
+  "jeu": "City Game Studio",
+  "sources": [
+    { "titre": "Discussion Steam sur les succès cachés (en anglais)", "url": "https://steamcommunity.com/app/726840/discussions/0/3060742484838802262/" },
+    { "titre": "Succès sur Steam", "url": "https://steamcommunity.com/stats/726840/achievements" }
+  ],
+  "note": "Jeu de gestion sans histoire. Deux succès se ratent dans une carrière s'ils ne sont pas faits avant 2000 (jeu AAA, console perso) : sinon, nouvelle partie. Les « Créer un jeu connu » se font en nommant un jeu comme le classique cité.",
+  "sansEtapes": true,
+  "sauvegarde": { "lisible": false, "chemin": "%APPDATA%\\Godot\\app_userdata\\CityGameStudio", "note": "Fichier .cgs chiffré par le moteur Godot (en-tête GDEC) : non lu." },
+  "sections": [],
+  "succes": {
+    "aaa_90s": { "conseil": "À faire avant l'an 2000 dans la carrière, sinon il faut une nouvelle partie." },
+    "customplatform_90s": { "conseil": "Crée ta console avant l'an 2000 dans la carrière, sinon il faut une nouvelle partie." },
+    "mistake_were_made": { "conseil": "Contrat d'exclusivité de 96 mois avec la Joycast, tant qu'elle est proposée.", "aConfirmer": true },
+    "citygamestudio": { "conseil": "Joue la carrière jusqu'à sa date de fin.", "aConfirmer": true },
+    "worstgame": { "conseil": "Rate exprès un jeu (mauvais choix de genre et de thème, peu de temps de développement).", "aConfirmer": true },
+    "diablo": { "conseil": "Publie un jeu nommé « Diablo ».", "aConfirmer": true },
+    "simcity": { "conseil": "Publie un jeu nommé « SimCity ».", "aConfirmer": true },
+    "civilization": { "conseil": "Publie un jeu nommé « Civilization ».", "aConfirmer": true },
+    "settlers": { "conseil": "Publie un jeu nommé « The Settlers ».", "aConfirmer": true },
+    "streetfighter": { "conseil": "Publie un jeu nommé « Street Fighter ».", "aConfirmer": true },
+    "ageofempire": { "conseil": "Publie un jeu nommé « Age of Empires ».", "aConfirmer": true },
+    "pitfall": { "conseil": "Publie un jeu nommé « Pitfall »." },
+    "portal": { "conseil": "Publie un jeu nommé « Portal ».", "aConfirmer": true },
+    "mario": { "conseil": "Publie un jeu nommé « Mario ».", "aConfirmer": true },
+    "halflife": { "conseil": "Publie un jeu nommé « Half-Life ».", "aConfirmer": true },
+    "flightsimulator": { "conseil": "Publie un jeu nommé « FlightSimulator ».", "aConfirmer": true },
+    "minprice": { "conseil": "Mets le prix d'un jeu au minimum avant de le publier." },
+    "game_1000": { "conseil": "Très long : enchaîne de petits jeux rapides." },
+    "postmortem_1000": { "conseil": "Fais le post-mortem de chaque jeu publié : avance avec « 1 000 jeux »." }
+  }
+}
