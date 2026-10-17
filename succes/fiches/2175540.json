@@ -1,0 +1,34 @@
+{
+  "jeu": "Dragon Quest Monsters : Le Prince des ombres",
+  "sources": [
+    { "titre": "Succès sur Steam (ordre et rareté)", "url": "https://steamcommunity.com/stats/2175540/achievements" }
+  ],
+  "note": "Étapes déduites des succès d'histoire, débloqués dans l'ordre du scénario. La sauvegarde du jeu est chiffrée : la position vient de tes succès ou de ton choix.",
+  "sections": [
+    { "id": "debut", "nom": "Début de l'aventure", "atteinte": "ACHIEVEMENT_STARTADVENTURE" },
+    { "id": "rothery", "atteinte": "ACHIEVEMENT_ENCOUNTROTHERY" },
+    { "id": "bennett", "atteinte": "ACHIEVEMENT_ENCOUNTBENNETT" },
+    { "id": "chateau", "atteinte": "ACHIEVEMENT_CASTLELOAD" },
+    { "id": "verite", "atteinte": "ACHIEVEMENT_BACKINTIME" },
+    { "id": "preparatifs", "atteinte": "ACHIEVEMENT_GOTOFINALBATTLE" },
+    { "id": "fin", "nom": "Après la fin de l'histoire", "atteinte": "ACHIEVEMENT_ENDTOFATE" },
+    { "id": "mondes", "atteinte": "ACHIEVEMENT_WORLDSAVIOR" }
+  ],
+  "succes": {
+    "ACHIEVEMENT_STARTADVENTURE": { "depuis": "debut" },
+    "ACHIEVEMENT_ENCOUNTROTHERY": { "depuis": "debut", "conseil": "Suite de l'histoire." },
+    "ACHIEVEMENT_ENCOUNTBENNETT": { "depuis": "rothery", "conseil": "Suite de l'histoire." },
+    "ACHIEVEMENT_CASTLELOAD": { "depuis": "bennett", "conseil": "Suite de l'histoire." },
+    "ACHIEVEMENT_BACKINTIME": { "depuis": "chateau", "conseil": "Suite de l'histoire." },
+    "ACHIEVEMENT_GOTOFINALBATTLE": { "depuis": "verite", "conseil": "Suite de l'histoire." },
+    "ACHIEVEMENT_ENDTOFATE": { "depuis": "preparatifs", "conseil": "Combat final de l'histoire." },
+    "ACHIEVEMENT_WORLDSAVIOR": { "depuis": "fin", "conseil": "Contenu d'après-jeu.", "aConfirmer": true },
+    "ACHIEVEMENT_ENDORARENACHAMPION": { "depuis": "debut", "conseil": "Les rangs du Colisée se débloquent au fil de l'histoire : reviens-y à chaque nouvelle étape.", "aConfirmer": true },
+    "ACHIEVEMENT_EXAARENACHAMPION": { "depuis": "fin", "conseil": "Arène de l'après-jeu.", "aConfirmer": true },
+    "ACHIEVEMENT_BATTLEMASTER": { "conseil": "Se fait tout seul en jouant : chaque combat gagné compte." },
+    "ACHIEVEMENT_FORMULATIONMASTER": { "conseil": "Chaque synthèse compte." },
+    "ACHIEVEMENT_MEDALMASTER": { "conseil": "Fouille les coffres et les éclats au sol de chaque zone.", "aConfirmer": true },
+    "ACHIEVEMENT_MONSTERMASTER": { "conseil": "Les recettes de rang X sont dans l'onglet Synthèse du carnet.", "lien": "https://romusan495.github.io/antre-de-romusan/dqm3/", "aConfirmer": true },
+    "ACHIEVEMENT_ALLACHIEVEMENT": { "depuis": "fin", "conseil": "Tous les autres succès." }
+  }
+}

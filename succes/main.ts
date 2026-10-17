@@ -3,6 +3,7 @@
 import { dossierDonnees, jeuLance, lireJeu, listerJeux } from "./steam.ts";
 import { HKLM, premierPlan, regTexte } from "./windows.ts";
 import { PAGE, TITRE } from "./page.ts";
+import { choisirPosition, fiche, positionAuto, positionManuelle } from "./fiches.ts";
 
 const PORT = 47815;
 const URL_PAGE = `http://127.0.0.1:${PORT}/`;
@@ -72,7 +73,18 @@ async function repondre(req: Request): Promise<Response> {
       if (demande !== "auto") jeu = await lireJeu(+demande);
       else if (jeuEnCours?.succes.length) jeu = jeuEnCours;
       else { const l = await jeux(); if (l[0]) jeu = await lireJeu(l[0].appid); }
-      return json({ lance, nomLance: jeuEnCours?.nom ?? (lance ? `jeu ${lance} (sans succès)` : ""), jeu });
+      const f = jeu && fiche(jeu.appid);
+      const etape = f && jeu ? {
+        auto: positionAuto(f, new Set(jeu.succes.filter((s) => s.fait).map((s) => s.id))),
+        manuelle: positionManuelle(jeu.appid),
+      } : null;
+      return json({ lance, nomLance: jeuEnCours?.nom ?? (lance ? `jeu ${lance} (sans succès)` : ""), jeu, fiche: f, etape });
+    }
+    case "/api/position": {
+      const appid = +(url.searchParams.get("appid") ?? 0), section = url.searchParams.get("section");
+      if (req.method !== "POST" || !appid) return new Response("Requête invalide", { status: 400 });
+      choisirPosition(appid, section && section !== "auto" ? section : null);
+      return json({ ok: true });
     }
     case "/api/epingler": {
       const oui = url.searchParams.get("oui") === "1";
