@@ -3,8 +3,8 @@
 // une fiche du même nom dans %LOCALAPPDATA%\AntreRomusan\Succes\fiches la remplace sans recompiler.
 import { dossierDonnees } from "./steam.ts";
 
-export type Section = { id: string; nom?: string; atteinte?: string | string[] }; // atteinte : un succès, ou plusieurs (l'un ou l'autre)
-export type InfoSucces = { depuis?: string; jusqua?: string; conseil?: string; lien?: string; aConfirmer?: boolean };
+export type Section = { id: string; nom?: string; atteinte?: string | string[]; motsCles?: string[] }; // atteinte : un succès, ou plusieurs (l'un ou l'autre)
+export type InfoSucces = { motsCles?: string[]; depuis?: string; jusqua?: string; conseil?: string; lien?: string; aConfirmer?: boolean };
 export type Fiche = {
   jeu: string; sources?: { titre: string; url: string }[]; note?: string;
   sansEtapes?: boolean; // jeu sans histoire : pas d'étapes, la fiche sert seulement à ne pas le remettre en file

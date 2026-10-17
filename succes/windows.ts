@@ -35,6 +35,21 @@ export function regTexte(racine: bigint, cle: string, valeur: string): string | 
   return String.fromCharCode(...data.subarray(0, fin < 0 ? data.length : fin));
 }
 
+/** Lance un programme sans fenêtre console (CREATE_NO_WINDOW) : aucun clignotement par-dessus le jeu. */
+export function lancerCache(ligneDeCommande: string): boolean {
+  const k32 = Deno.dlopen("kernel32.dll", {
+    CreateProcessW: { parameters: ["pointer", "buffer", "pointer", "pointer", "i32", "u32", "pointer", "pointer", "buffer", "buffer"], result: "i32" },
+    CloseHandle: { parameters: ["pointer"], result: "i32" },
+  });
+  const si = new Uint8Array(104); // STARTUPINFOW (x64)
+  new DataView(si.buffer).setUint32(0, 104, true);
+  const pi = new BigUint64Array(3); // PROCESS_INFORMATION
+  const ok = k32.symbols.CreateProcessW(null, enc(ligneDeCommande), null, null, 0, 0x08000000, null, null, si, new Uint8Array(pi.buffer)) !== 0;
+  if (ok) { k32.symbols.CloseHandle(ptr(pi[0])); k32.symbols.CloseHandle(ptr(pi[1])); }
+  k32.close();
+  return ok;
+}
+
 let u32: ReturnType<typeof ouvrirUser32> | null = null;
 function ouvrirUser32() {
   return Deno.dlopen("user32.dll", {

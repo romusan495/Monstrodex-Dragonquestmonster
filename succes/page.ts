@@ -41,6 +41,11 @@ main { padding: 8px 12px 16px; display: grid; gap: 6px; }
 .s .barre { margin-top: 4px; height: 4px; }
 .voile { cursor: pointer; font-style: italic; }
 .vide { color: var(--doux); text-align: center; padding: 24px 8px; }
+#scan { font-size: 12px; color: var(--doux); margin: 2px 0 4px; }
+#scan button { padding: 1px 6px; font-size: 12px; }
+#scaninfo { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+#scanecran { flex: 0 1 auto; font-size: 12px; padding: 1px 4px; }
+h2.vu, .meta .vu { color: #6cb6ff; }
 #ou { margin: 2px 0; font-size: 13px; }
 #ou label { color: var(--doux); white-space: nowrap; }
 .petit { font-size: 11px; color: var(--doux); margin-bottom: 4px; }
@@ -63,6 +68,12 @@ h2.doux { color: var(--doux); }
     <button id="epingle" aria-pressed="true" title="Garder la fenêtre au-dessus du jeu">📌</button>
   </div>
   <div id="etat">Lecture des succès…</div>
+  <div id="scan" class="ligne">
+    <button id="scanbtn" aria-pressed="true" title="Lire le texte de l'écran de jeu pour repérer les succès faisables là où tu es">👁 Écran</button>
+    <span id="scaninfo"></span>
+    <button id="scanmaint" title="Lire l'écran maintenant">↻</button>
+    <select id="scanecran" aria-label="Écran de jeu" hidden></select>
+  </div>
   <div id="ou" class="ligne" hidden>
     <label for="etape">Où j'en suis</label>
     <select id="etape"></select>
@@ -122,18 +133,20 @@ function carte(s, nouveaux, info, extra) {
 }
 
 // Liste des étapes : reconstruite seulement si elle change, et jamais pendant que la liste est ouverte.
-function majEtapes(j, f, e) {
+function majEtapes(j, f, e, idEcran) {
   $("ou").hidden = !f;
   if (!f) return null;
   const iAuto = f.sections.findIndex((x) => x.id === e.auto);
   const iMan = f.sections.findIndex((x) => x.id === e.manuelle);
-  const iPos = Math.max(iAuto, iMan);
+  const iEcran = f.sections.findIndex((x) => x.id === idEcran);
+  const iPos = Math.max(iAuto, iMan, iEcran);
   const html = '<option value="auto">Automatique : ' + echap(nomEtape(f.sections[iAuto], iAuto, j)) + "</option>"
     + f.sections.map((x, i) => '<option value="' + echap(x.id) + '"' + (i < iAuto ? " disabled" : "") + ">" + echap(nomEtape(x, i, j)) + "</option>").join("");
   const sel = $("etape");
   if (sel.dataset.html !== html && document.activeElement !== sel) { sel.innerHTML = html; sel.dataset.html = html; }
   if (document.activeElement !== sel) sel.value = iMan > iAuto ? e.manuelle : "auto";
-  $("ouinfo").textContent = iMan > iAuto ? "choisie à la main" : "d'après tes succès";
+  $("ouinfo").textContent = iEcran > Math.max(iAuto, iMan) ? "repérée à l'écran : " + nomEtape(f.sections[iEcran], iEcran, j)
+    : iMan > iAuto ? "choisie à la main" : "d'après tes succès";
   return iPos;
 }
 
@@ -150,7 +163,8 @@ function afficher() {
   appidAffiche = j.appid; faitsAvant = new Set(j.succes.filter((s) => s.fait).map((s) => s.id));
 
   // Une fiche « sans étapes » garde ses conseils mais pas le regroupement par étape.
-  const f = dernier.fiche?.sections?.length ? dernier.fiche : null, iPos = majEtapes(j, f, dernier.etape);
+  const ec = dernier.ecran ?? { reperes: {} };
+  const f = dernier.fiche?.sections?.length ? dernier.fiche : null, iPos = majEtapes(j, f, dernier.etape, ec.etape);
   const idx = (id) => f ? f.sections.findIndex((x) => x.id === id) : -1;
   const info = (s) => dernier.fiche?.succes?.[s.id];
 
@@ -160,7 +174,15 @@ function afficher() {
     : (a.fait - b.fait) || ((b.progres ? b.progres.val / b.progres.max : 0) - (a.progres ? a.progres.val / a.progres.max : 0)) || ((b.rarete ?? -1) - (a.rarete ?? -1)));
   if (!l.length) { $("liste").innerHTML = '<p class="vide">' + (filtre === "afaire" ? "Tout est fait. Bravo !" : "Rien ici pour l'instant.") + "</p>"; return; }
 
-  if (!f || filtre !== "afaire") { $("liste").innerHTML = l.map((s) => carte(s, nouveaux, info(s))).join(""); return; }
+  const bloc = (titre, cartes, cls) => cartes.length ? '<h2 class="' + (cls || "") + '">' + titre + " (" + cartes.length + ")</h2>" + cartes.join("") : "";
+  if (filtre !== "afaire") { $("liste").innerHTML = l.map((s) => carte(s, nouveaux, info(s))).join(""); return; }
+
+  // Repérés à l'écran : en tête, quoi qu'il arrive (le mot n'est pas montré pour un succès caché).
+  const voileDe = (s) => s.cache && !revele && !devoiles.has(s.id);
+  const repere = l.filter((s) => ec.reperes[s.id]);
+  l = l.filter((s) => !ec.reperes[s.id]);
+  const htmlRepere = bloc("Repéré à l'écran", repere.map((s) => carte(s, nouveaux, info(s), { cls: "vu", txt: voileDe(s) ? "vu à l'écran" : "vu : " + ec.reperes[s.id] })), "vu");
+  if (!f) { $("liste").innerHTML = htmlRepere + bloc(repere.length ? "Les autres" : "À faire", l.map((s) => carte(s, nouveaux, info(s))), repere.length ? "doux" : ""); return; }
 
   // Avec une fiche : regroupement selon l'étape où tu en es.
   const groupes = { derniere: [], ici: [], maintenant: [], plusTard: [], rates: [] };
@@ -173,8 +195,7 @@ function afficher() {
     else groupes.maintenant.push(carte(s, nouveaux, i));
   }
   groupes.plusTard.sort((a, b) => a.d - b.d);
-  const bloc = (titre, cartes, cls) => cartes.length ? '<h2 class="' + (cls || "") + '">' + titre + " (" + cartes.length + ")</h2>" + cartes.join("") : "";
-  $("liste").innerHTML = bloc("Dernière chance ici", groupes.derniere, "alerte")
+  $("liste").innerHTML = htmlRepere + bloc("Dernière chance ici", groupes.derniere, "alerte")
     + bloc("Dans cette étape", groupes.ici)
     + bloc(groupes.ici.length ? "Faisables aussi" : "Faisables maintenant", groupes.maintenant)
     + bloc("Plus tard", groupes.plusTard.map((x) => x.html), "doux")
@@ -190,8 +211,27 @@ async function rafraichir() {
     $("etat").innerHTML = e ? "Jeu lancé : <b>" + echap(dernier.nomLance) + "</b>"
       : "Aucun jeu lancé" + (choix === "auto" && dernier.jeu ? " — dernier joué : " + echap(dernier.jeu.nom) : "");
     if (e && dernier.jeu && dernier.jeu.appid !== e) $("etat").innerHTML += " — affiché : " + echap(dernier.jeu.nom);
+    majScan(dernier.ecran);
     afficher();
   } catch { $("etat").textContent = "Le traqueur ne répond plus (fenêtre à fermer)."; }
+}
+
+function majScan(ec) {
+  if (!ec) return;
+  $("scanbtn").setAttribute("aria-pressed", ec.voulu);
+  const depuis = ec.t ? Math.round((Date.now() - ec.t) / 1000) : null;
+  const age = depuis == null ? "" : depuis < 60 ? "il y a " + depuis + " s" : "il y a " + Math.round(depuis / 60) + " min";
+  const n = Object.keys(ec.reperes || {}).length;
+  $("scaninfo").textContent = !ec.voulu ? "lecture de l'écran en pause"
+    : ec.erreur ? "erreur de lecture : " + ec.erreur
+    : !ec.actif ? "lecture de l'écran : en attente d'un jeu lancé"
+    : "écran lu " + (age || "bientôt") + " — toutes les " + ec.intervalle + " s" + (n ? " — " + n + " succès repéré" + (n > 1 ? "s" : "") : "");
+  // Choix de l'écran : seulement s'il y en a plusieurs.
+  const sel = $("scanecran");
+  sel.hidden = (ec.ecrans || []).length < 2;
+  const html = (ec.ecrans || []).map((x, i) => '<option value="' + echap(x.nom) + '">Écran ' + (i + 1) + " — " + x.largeur + "×" + x.hauteur + (x.principal ? " (principal)" : "") + "</option>").join("");
+  if (sel.dataset.html !== html && document.activeElement !== sel) { sel.innerHTML = html; sel.dataset.html = html; }
+  if (document.activeElement !== sel) sel.value = ec.ecran || ec.ecranLu || "";
 }
 
 async function chargerJeux() {
@@ -206,6 +246,10 @@ $("etape").onchange = async () => {
   $("etape").blur();
   rafraichir();
 };
+const reglerScan = async (q) => { await fetch("/api/scan?" + q, { method: "POST" }); rafraichir(); };
+$("scanbtn").onclick = () => reglerScan("oui=" + ($("scanbtn").getAttribute("aria-pressed") === "true" ? 0 : 1));
+$("scanmaint").onclick = () => { reglerScan("maintenant=1"); setTimeout(rafraichir, 2500); };
+$("scanecran").onchange = () => { reglerScan("ecran=" + encodeURIComponent($("scanecran").value) + "&maintenant=1"); $("scanecran").blur(); };
 $("jeu").onchange = () => { choix = $("jeu").value; appidAffiche = null; rafraichir(); };
 for (const b of document.querySelectorAll("[data-f]")) b.onclick = () => { filtre = b.dataset.f; memo("filtre", filtre); majBoutons(); afficher(); };
 $("caches").onclick = () => { revele = !revele; memo("caches", revele ? "1" : "0"); majBoutons(); afficher(); };

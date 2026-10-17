@@ -1,9 +1,10 @@
 // Traqueur de succès Steam : détecte le jeu lancé et affiche ses succès dans une petite fenêtre au premier plan.
-// Lancer : deno task succes   (option --sans-fenetre : seulement le serveur, sur http://127.0.0.1:47815)
+// Lancer : deno task succes   (options : --sans-fenetre = seulement le serveur, sur http://127.0.0.1:47815 ; --sans-scan = pas de lecture de l'écran)
 import { dossierDonnees, jeuLance, lireJeu, listerJeux } from "./steam.ts";
 import { HKLM, premierPlan, regTexte } from "./windows.ts";
 import { PAGE, TITRE } from "./page.ts";
 import { choisirPosition, fiche, mettreEnFile, positionAuto, positionManuelle } from "./fiches.ts";
+import { demarrerScan, etatEcran, majJeuLance, reglerScan } from "./ecran.ts";
 
 const PORT = 47815;
 const URL_PAGE = `http://127.0.0.1:${PORT}/`;
@@ -67,6 +68,7 @@ async function repondre(req: Request): Promise<Response> {
       return json(await jeux());
     case "/api/etat": {
       const lance = jeuLance();
+      majJeuLance(lance !== 0);
       const jeuEnCours = lance ? await lireJeu(lance) : null;
       if (jeuEnCours?.succes.length && !fiche(lance)) mettreEnFile(lance, jeuEnCours.nom);
       const demande = url.searchParams.get("appid") ?? "auto";
@@ -79,7 +81,15 @@ async function repondre(req: Request): Promise<Response> {
         auto: positionAuto(f, new Set(jeu.succes.filter((s) => s.fait).map((s) => s.id))),
         manuelle: positionManuelle(jeu.appid),
       } : null;
-      return json({ lance, nomLance: jeuEnCours?.nom ?? (lance ? `jeu ${lance} (sans succès)` : ""), jeu, fiche: f, etape });
+      // Le texte de l'écran ne concerne que le jeu lancé.
+      const ecran = etatEcran(jeu && jeu.appid === lance ? jeu : null, f || null);
+      return json({ lance, nomLance: jeuEnCours?.nom ?? (lance ? `jeu ${lance} (sans succès)` : ""), jeu, fiche: f, etape, ecran });
+    }
+    case "/api/scan": {
+      if (req.method !== "POST") return new Response("Requête invalide", { status: 400 });
+      const p = url.searchParams;
+      reglerScan({ voulu: p.has("oui") ? p.get("oui") === "1" : undefined, ecran: p.get("ecran") ?? undefined, maintenant: p.has("maintenant") });
+      return json({ ok: true });
     }
     case "/api/position": {
       const appid = +(url.searchParams.get("appid") ?? 0), section = url.searchParams.get("section");
@@ -108,4 +118,5 @@ try {
   throw e;
 }
 if (!sansFenetre) ouvrirFenetre();
+if (!Deno.args.includes("--sans-scan") && !demarrerScan()) journal("Scan de l'écran : impossible de lancer PowerShell.");
 jeux();
